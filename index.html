@@ -134,7 +134,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
             text-align: center;
             margin: 20px 0; /* Add spacing between service items */
-            max-width: 800px; /* Limit width of service items */
+            max-width: 90%; /* Limit width of service items */
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
             cursor: pointer; /* Change cursor to pointer */
         }
@@ -170,6 +170,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+            align-items: center; /* Center items horizontally */
         }
     </style>
 </head>
@@ -181,21 +182,21 @@
             <nav class="navigation">
                 <ul>
                     <li><a href="terra_ai.html">Terra's AI</a></li>
-                    <li><a href="Payment.html">Sign Up</a></li> <!-- Added Signup link -->
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="video_generator.html">Video Generator</a></li>
-                    <li><a href="image_generator.html">Image Generator</a></li>
-                    <li><a href="about_owner.html">About Owner</a></li>
-                    <li><a href="instagram.html">Instagram</a></li>
+                    <li><a href="./payment.html">Sign Up</a></li> <!-- Changed to relative path -->
+                    <li><a href="./index.html">Home</a></li> <!-- Changed to relative path -->
+                    <li><a href="./video_generator.html">Video Generator</a></li> <!-- Changed to relative path -->
+                    <li><a href="./image_generator.html">Image Generator</a></li> <!-- Changed to relative path -->
+                    <li><a href="./about_owner.html">About Owner</a></li> <!-- Changed to relative path -->
+                    <li><a href="./instagram.html">Instagram</a></li> <!-- Changed to relative path -->
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-   
     <section class="hero">
         <div class="container">
+            <
             <h2 class="hero-text">Empowering Your Digital Presence</h2>
             <p>We blend creativity with technology to craft unique digital experiences for your brand.</p>
         </div>
@@ -203,8 +204,6 @@
     
     <!-- About Section with Video Background -->
     <section id="about">
-       
-        <video id="video-background
         <video id="video-background" autoplay loop>
             <source src="copy_A7F56166-5179-4035-94E2-192C90D828E81 (1).mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -278,8 +277,9 @@
         }
     
         function centerSignupPage() {
-            window.location.href = "payment.html";
+            window.location.href = "./payment.html"; // Changed to relative path
         }
     </script>
-</body>
-</html>
+    </body>
+    </html>
+    
