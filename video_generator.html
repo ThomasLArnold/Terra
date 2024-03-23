@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra | Video Generator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* Text color */
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto; /* Center the container */
+        }
+
+        /* Navigation Styles */
+        .header {
+            background-color: #1a1a1a; /* Dark background for navigation */
+            padding: 20px 0; /* Add padding to the top and bottom */
+        }
+
+        .navigation ul {
+            list-style: none; /* Remove default list styles */
+            padding: 0;
+            text-align: center; /* Center align navigation links */
+        }
+
+        .navigation ul li {
+            display: inline-block; /* Display items horizontally */
+            margin-right: 20px; /* Add space between items */
+        }
+
+        .navigation ul li a {
+            text-decoration: none; /* Remove underline from links */
+            color: #ffffff; /* Link text color */
+            font-size: 18px; /* Font size */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        .navigation ul li a:hover {
+            color: #ff00ff; /* Neon pink color on hover */
+        }
+
+        /* Video Generator Section Styles */
+        .video-generator {
+            text-align: center;
+            margin-top: 100px; /* Adjust margin as needed */
+        }
+        .video-generator input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ffffff; /* White border */
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            color: #ffffff; /* Text color */
+            font-size: 16px;
+            outline: none; /* Remove outline */
+        }
+        .video-generator button {
+            padding: 10px 20px;
+            background-color: #00ffff; /* Neon cyan button color */
+            color: #000000; /* Black text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .video-generator button:hover {
+            background-color: #00ffcc; /* Lighter cyan on hover */
+        }
+        /* Terra Text Styles */
+        .logo {
+            color: #ffffff; /* Initial color */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+            cursor: pointer;
+        }
+        .logo:hover {
+            color: #31e7ff; /* Change color on hover */
+        }
+        /* Response Box Styles */
+        #response-box {
+            background-color: #1a1a1a; /* Dark gray background */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* White box shadow */
+        }
+        /* Video Player Styles */
+        #video-player {
+            width: 100%;
+            margin-top: 20px;
+        }
+        /* Save Video Button Styles */
+        .save-button {
+            padding: 10px 20px;
+            background-color: #ff00ff; /* Neon pink button color */
+            color: #000000; /* Black text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .save-button:hover {
+            background-color: #ff99ff; /* Lighter pink on hover */
+        }
+    </style>
+    <script>
+        function generateVideo() {
+            // Simulated function to generate video
+            alert('Generating video...');
+            // For demonstration, let's assume a video URL is obtained
+            var videoUrl = 'https://www.example.com/video.mp4';
+            // Display the video player
+            var videoPlayer = document.getElementById('video-player');
+            videoPlayer.innerHTML = `<video controls><source src="${videoUrl}" type="video/mp4">Your browser does not support the video tag.</video>`;
+        }
+
+        function saveVideo() {
+            // Simulated function to save video
+            alert('Saving video...');
+            // For demonstration, let's assume the video is saved successfully
+            alert('Video saved successfully!');
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Terra</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="terra_ai.html">Terra's AI</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="video_generator.html">Video Generator</a></li>
+                    <li><a href="image_generator.html">Image Generator</a></li>
+                    <li><a href="about_owner.html">About Owner</a></li>
+                    <li><a href="instagram.html">Instagram</a></li> <!-- Updated link to Terra's Instagram -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Video Generator Section -->
+    <section class="video-generator">
+        <div class="container">
+            <h2>Video Generator</h2>
+            <form id="video-generator-form">
+                <label for="video-text">Enter text for video generation:</label>
+                <br>
+                <input type="text" id="video-text" name="video-text">
+                <br>
+                <button type="button" onclick="generateVideo()">Generate Video</button>
+            </form>
+            <!-- Response Box -->
+            <div id="response-box">
+                <!-- Video Player -->
+                <div id="video-player"></div>
+                <!-- Save Video Button -->
+                <button class="save-button" onclick="saveVideo()">Save Video</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Terra. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra | Image Generator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a; /* Dark cool theme */
+            color: #ffffff; /* Text color */
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto; /* Center the container */
+        }
+
+        /* Navigation Styles */
+        .header {
+            background-color: #1a1a1a; /* Dark background for navigation */
+            padding: 20px 0; /* Add padding to the top and bottom */
+        }
+
+        .navigation ul {
+            list-style: none; /* Remove default list styles */
+            padding: 0;
+            text-align: center; /* Center align navigation links */
+        }
+
+        .navigation ul li {
+            display: inline-block; /* Display items horizontally */
+            margin-right: 20px; /* Add space between items */
+        }
+
+        .navigation ul li a {
+            text-decoration: none; /* Remove underline from links */
+            color: #ffffff; /* Link text color */
+            font-size: 18px; /* Font size */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        .navigation ul li a:hover {
+            color: #ff00ff; /* Neon pink color on hover */
+        }
+
+        /* Image Generator Section Styles */
+        .image-generator {
+            text-align: center;
+            margin-top: 100px; /* Adjust margin to center the section */
+        }
+        .image-generator input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #fff; /* White border */
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            color: #ffffff; /* Text color */
+            font-size: 16px;
+            outline: none; /* Remove outline */
+        }
+        .image-generator button {
+            padding: 10px 20px;
+            background-color: #00ffff; /* Neon cyan button color */
+            color: #000000; /* Black text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .image-generator button:hover {
+            background-color: #00ffcc; /* Lighter cyan on hover */
+        }
+        .image-output {
+            border: 2px solid #ff00ff; /* Neon pink border for the image output */
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            max-width: 500px; /* Maximum width for the image output */
+            margin: 0 auto; /* Center the image output */
+        }
+        .save-button {
+            padding: 10px 20px;
+            background-color: #00ffff; /* Neon cyan button color */
+            color: #000000; /* Black text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .save-button:hover {
+            background-color: #00ffcc; /* Lighter cyan on hover */
+        }
+    </style>
+    <script>
+        function generateImage() {
+            var imageText = document.getElementById('image-text').value;
+            fetch('/api/generate-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: imageText }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Generated Image:', data.image);
+                // Display the generated image
+                var imageOutput = document.getElementById('image-output');
+                var image = document.createElement('img');
+                image.src = data.image;
+                image.alt = 'Generated Image';
+                image.style.maxWidth = '100%';
+                imageOutput.innerHTML = ''; // Clear previous content
+                imageOutput.appendChild(image);
+                // Add Save button
+                var saveButton = document.createElement('button');
+                saveButton.textContent = 'Save Image';
+                saveButton.className = 'save-button';
+                saveButton.onclick = function() {
+                    saveImage(data.image);
+                };
+                imageOutput.appendChild(saveButton);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function saveImage(imageUrl) {
+            // Replace this with your save logic
+            console.log('Image saved:', imageUrl);
+            alert('Image saved successfully!');
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Terra</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="terra_ai.html">Terra's AI</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="video_generator.html">Video Generator</a></li>
+                    <li><a href="image_generator.html">Image Generator</a></li>
+                    <li><a href="about_owner.html">About Owner</a></li>
+                    <li><a href="instagram.html">Instagram</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Image Generator Section -->
+    <section class="image-generator">
+        <div class="container">
+            <h2>Image Generator</h2>
+            <form id="image-generator-form">
+                <label for="image-text">Enter text for image generation:</label>
+                <br>
+                <input type="text" id="image-text" name="image-text">
+                <br>
+                <button type="button" onclick="generateImage()">Generate Image</button>
+            </form>
+            <div id="image-output" class="image-output"></div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Terra. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
