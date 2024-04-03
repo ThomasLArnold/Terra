@@ -172,6 +172,12 @@
             flex-direction: column;
             align-items: center; /* Center items horizontally */
         }
+
+        /* Remove bullet points from unordered lists */
+        .service-item ul {
+            list-style: none;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +193,7 @@
                     <li><a href="./image_generator.html">Image Generator</a></li> <!-- Changed to relative path -->
                     <li><a href="./about_owner.html">About Owner</a></li> <!-- Changed to relative path -->
                     <li><a href="./instagram.html">Instagram</a></li>
-                    <li><a href="./privacy policy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
+                    <li><a href="./privacy_policy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
                 </ul>
             </nav>
         </div>
@@ -204,7 +210,7 @@
     <!-- About Section with Video Background -->
     <section id="about">
         <!-- Signup Button -->
-        <button class="signup-button" onclick="centerSignupPage()">Sign Up</button>
+        <button class="signup-button" onclick="redirectToWebsiteCreation()">Sign Up</button>
         <!-- Embed YouTube Video -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
         <div class="container">
@@ -218,20 +224,18 @@
     <section class="services">
         <div class="container">
             <h2>Our Services</h2>
+            <div class="service-item" onclick="redirectToWebsiteCreation()">
+                <h3>Website Creation</h3>
+                <p>Unlock the potential of your online presence with our website creation services. Choose from our range of packages tailored to suit your needs.</p>
+                <p><strong>Basic Package:</strong> $250</p>
+                <p><strong>Standard Package:</strong> $750</p>
+                <p><strong>Premium Package:</strong> $2500</p>
+            </div>
             <div class="service-item" onclick="centerSignupPage()">
                 <h3>App Development</h3>
                 <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
                 <p><strong>Basic App Creation:</strong> Starting at $1500</p>
                 <p><strong>Established App Updates:</strong> Starting at $750</p>
-            </div>
-            <div class="service-item" onclick="window.location.href = 'websitecreationmoreinfo.html';">
-                <h3>Website Creation</h3>
-                <p>Unlock the potential of your online presence with our website creation services. Choose from our range of packages tailored to suit your needs.</p>
-                <ul>
-                    <li><strong>Basic Package:</strong> $250</li>
-                    <li><strong>Standard Package:</strong> $750</li>
-                    <li><strong>Premium Package:</strong> $2500</li>
-                </ul>
             </div>
             <div class="service-item" onclick="centerSignupPage()">
                 <h3>AI Art Generation</h3>
@@ -272,11 +276,13 @@
     
     <!-- JavaScript to redirect to signup page -->
     <script>
+        function redirectToWebsiteCreation() {
+            window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
+        }
+
         function centerSignupPage() {
-            window.location.href = "./payment.html"; // Changed to relative path
+            window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
         }
     </script>
 </body>
 </html>
-
-    
