@@ -15,7 +15,7 @@
             background: linear-gradient(to bottom, #ff9d2f, #fc2e59, #4fd1c5); /* Initial gradient colors */
             animation: gradientChange 10s infinite alternate; /* Gradient animation */
             position: relative;
-            color: #333; /* Default text color */
+            color: #fff; /* Change text color to white for better contrast */
         }
 
         /* Gradient Animation */
@@ -124,16 +124,14 @@
             align-items: center;
             flex-direction: column; /* Center items vertically */
             padding: 80px 0;
-            background-image: url('https://www.bhargit.com/image/slider/mobile-app-development.webp'); /* Background image */
-            background-size: contain; /* Less zoomed-in background image */
-            background-position: center; /* Center the background image */
+            background-color: black; /* Set the background to black */
             color: white; /* Text color */
         }
 
         .service-item {
             flex: 1;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            background-color: black; /* Set service boxes to black */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
             text-align: center;
@@ -141,15 +139,16 @@
             max-width: 90%; /* Limit width of service items */
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
             cursor: pointer; /* Change cursor to pointer */
+            color: white; /* Ensure text within the boxes is white */
         }
 
         .service-item:hover {
             background-color: #fc2e59; /* Change background color on hover */
-            color: white; /* Change text color on hover */
+            color: white; /* Ensure text color remains white on hover */
         }
 
-        /* Signup Button */
-        .signup-button {
+        /* Signup and Signin Buttons */
+        .signup-button, .signin-button {
             background-color: #fc2e59;
             color: white;
             padding: 10px 20px;
@@ -161,11 +160,11 @@
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
         }
 
-        .signup-button:hover {
+        .signup-button:hover, .signin-button:hover {
             background-color: #ff1dce; /* Change background color on hover */
         }
 
-        /* Center the Signup Button */
+        /* Center the Signup and Signin Buttons */
         .container {
             display: flex;
             justify-content: center;
@@ -209,8 +208,11 @@
     
     <!-- About Section with Video Background -->
     <section id="about">
-        <!-- Signup Button -->
-        <button class="signup-button" onclick="redirectToWebsiteCreation()">Sign Up</button>
+        <!-- Signup and Signin Buttons -->
+        <div class="container" style="margin-top: 20px;">
+            <button class="signup-button" onclick="redirectToWebsiteCreation()">Sign Up</button>
+            <button class="signin-button" onclick="redirectToSignIn()">Sign In</button>
+        </div>
         <!-- Embed YouTube Video -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
         <div class="container">
@@ -247,42 +249,47 @@
                 <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
                 <p><strong>Price:</strong> $8.99</p> <!-- Updated price -->
             </div>
-        </div>
-    </section>
-    
-    <!-- Animated Text Section -->
-    <div class="animation-text">
-        <span>TensorFlow</span>
-        <span>PyTorch</span>
-        <span>Python</span>
-        <span>C++</span>
-        <span>Microsoft Azure</span>
+        </div
     </div>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Ready to elevate your digital presence? Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> and let's collaborate!</p> <!-- Updated email -->
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Terra. All rights reserved.</p>
-        </div>
-    </footer>
-    
-    <!-- JavaScript to redirect to signup page -->
-    <script>
-        function redirectToWebsiteCreation() {
-            window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
-        }
+</section>
 
-        function centerSignupPage() {
-            window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
-        }
-    </script>
+<!-- Animated Text Section -->
+<div class="animation-text">
+    <span>TensorFlow</span>
+    <span>PyTorch</span>
+    <span>Python</span>
+    <span>C++</span>
+    <span>Microsoft Azure</span>
+</div>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Ready to elevate your digital presence? Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> and let's collaborate!</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Terra. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript to redirect to signup page -->
+<script>
+    function redirectToWebsiteCreation() {
+        window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
+    }
+
+    function centerSignupPage() {
+        window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
+    }
+
+    function redirectToSignIn() {
+        window.location.href = "./signin.html"; // Redirect to sign-in page
+    }
+</script>
 </body>
 </html>
