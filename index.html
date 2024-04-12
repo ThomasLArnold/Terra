@@ -35,6 +35,28 @@
         .header {
             text-align: center; /* Center align the navigation */
             padding: 20px 0; /* Add padding to the top and bottom */
+            position: relative; /* Ensure proper positioning for the hamburger icon */
+        }
+
+        .navigation-toggle {
+            display: none; /* Hide the hamburger menu icon by default */
+        }
+
+        .navigation {
+            display: none; /* Hide the navigation menu by default */
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .navigation.active {
+            display: block; /* Show navigation when active */
         }
 
         .navigation ul {
@@ -43,15 +65,14 @@
         }
 
         .navigation ul li {
-            display: inline-block; /* Display items horizontally */
-            margin-right: 20px; /* Add space between items */
+            margin-bottom: 10px;
         }
 
         .navigation ul li a {
             text-decoration: none; /* Remove underline from links */
-            color: #fff; /* Link text color */
-            font-size: 18px; /* Font size */
-            transition: color 0.3s ease; /* Smooth transition for color change */
+            color: #000; /* Link text color */
+            font-size: 16px; /* Font size */
+            display: block;
         }
 
         .navigation ul li a:hover {
@@ -177,21 +198,29 @@
             list-style: none;
             padding: 0;
         }
+
+        /* Increase hamburger icon size */
+        .navigation-toggle {
+            font-size: 500px; /* Set font size to 24 pixels */
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <header class="header">
         <div class="container">
+            <input type="checkbox" class="navigation-toggle" id="nav-toggle">
+            <label for="nav-toggle">&#9776;</label> <!-- Hamburger menu icon -->
             <h1 class="logo">Terra</h1>
             <nav class="navigation">
                 <ul>
                     <li><a href="terra_ai.html">Terra's AI</a></li>
-                    <li><a href="./index.html">Home</a></li> <!-- Changed to relative path -->
-                    <li><a href="./video_generator.html">Video Generator</a></li> <!-- Changed to relative path -->
-                    <li><a href="./image_generator.html">Image Generator</a></li> <!-- Changed to relative path -->
-                    <li><a href="./about_owner.html">About Owner</a></li> <!-- Changed to relative path -->
-                    <li><a href="./instagram.html">Instagram</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="./video_generator.html">Video Generator</a></li>
+                    <li><a href="./image_generator.html">Image Generator</a></li>
+                    <li><a href="./about_owner.html">About Owner</a></li>
+                    <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
                     <li><a href="./privacypolicy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
                 </ul>
             </nav>
@@ -212,6 +241,8 @@
         <div class="container" style="margin-top: 20px;">
             <button class="signup-button" onclick="redirectToWebsiteCreation()">Sign Up</button>
             <button class="signin-button" onclick="redirectToSignIn()">Sign In</button>
+            <button class="signup-button" onclick="becomeDev()">Become a Dev</button>
+            <button class="signin-button" onclick="becomeSales()">Become a Member of our Sales Team</button>
         </div>
         <!-- Embed YouTube Video -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
@@ -223,73 +254,72 @@
     </section>
     
     <!-- Services Section -->
-    <section class="services">
+    <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
-            <div class="service-item" onclick="redirectToWebsiteCreation()">
+            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
                 <h3>Website Creation</h3>
                 <p>Unlock the potential of your online presence with our website creation services. Choose from our range of packages tailored to suit your needs.</p>
                 <p><strong>Basic Package:</strong> $250</p>
                 <p><strong>Standard Package:</strong> $750</p>
                 <p><strong>Premium Package:</strong> $2500</p>
             </div>
-            <div class="service-item" onclick="centerSignupPage()">
+            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
                 <h3>App Development</h3>
                 <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
                 <p><strong>Basic App Creation:</strong> Starting at $1500</p>
                 <p><strong>Established App Updates:</strong> Starting at $750</p>
             </div>
-            <div class="service-item" onclick="centerSignupPage()">
+            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
                 <p><strong>Price:</strong> $14.99</p> <!-- Updated price -->
             </div>
-            <div class="service-item" onclick="centerSignupPage()">
+            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
                 <h3>Personal Assistant</h3>
                 <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
                 <p><strong>Price:</strong> $8.99</p> <!-- Updated price -->
             </div>
-        </div
+        </div>
+    </section>
+
+    <!-- Animated Text Section -->
+    <div class="animation-text">
+        <span>TensorFlow</span>
+        <span>PyTorch</span>
+        <span>Python</span>
+        <span>C++</span>
+        <span>Microsoft Azure</span>
     </div>
-</section>
 
-<!-- Animated Text Section -->
-<div class="animation-text">
-    <span>TensorFlow</span>
-    <span>PyTorch</span>
-    <span>Python</span>
-    <span>C++</span>
-    <span>Microsoft Azure</span>
-</div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to elevate your digital presence? Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> and let's collaborate!</p>
+        </div>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p>Ready to elevate your digital presence? Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> and let's collaborate!</p>
-    </div>
-</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Terra. All rights reserved.</p>
+        </div>
+    </footer>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2024 Terra. All rights reserved.</p>
-    </div>
-</footer>
+    <!-- JavaScript to toggle navigation menu -->
+    <script>
+        const navToggle = document.querySelector('#nav-toggle');
+        const navigation = document.querySelector('.navigation');
 
-<!-- JavaScript to redirect to signup page -->
-<script>
-    function redirectToWebsiteCreation() {
-        window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
-    }
+        navToggle.addEventListener('click', () => {
+            navigation.classList.toggle('active');
+        });
 
-    function centerSignupPage() {
-        window.location.href = "./websitecreationmoreinfo.html"; // Redirect to website creation page
-    }
-
-    function redirectToSignIn() {
-        window.location.href = "./signin.html"; // Redirect to sign-in page
-    }
-</script>
+        // Function to redirect to websitecreationmoreinfo.html
+        function redirectToWebsiteCreationMoreInfo() {
+            window.location.href = 'websitecreationmoreinfo.html';
+        }
+    </script>
 </body>
 </html>
