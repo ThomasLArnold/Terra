@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scrollbar */
-            background: linear-gradient(to bottom, #ff9d2f, #fc2e59, #4fd1c5); /* Initial gradient colors */
+            background: linear-gradient(to bottom, #08c7d8, #13b6f1, #4fd1c5); /* Initial gradient colors */
             animation: gradientChange 10s infinite alternate; /* Gradient animation */
             position: relative;
             color: #fff; /* Change text color to white for better contrast */
@@ -21,13 +21,13 @@
         /* Gradient Animation */
         @keyframes gradientChange {
             0% {
-                background: linear-gradient(to bottom, #ff9d2f, #fc2e59, #4fd1c5);
+                background: linear-gradient(to bottom, #049bb3, #0696a6, #4fd1c5);
             }
             50% {
-                background: linear-gradient(to bottom, #ff1dce, #31e7ff, #ff6700);
+                background: linear-gradient(to bottom, #13a899, #0f4c54, #11e4c8);
             }
             100% {
-                background: linear-gradient(to bottom, #31e7ff, #ff1dce, #ff6700);
+                background: linear-gradient(to bottom, #31e7ff, #06bbd2, #36d0e1);
             }
         }
 
@@ -105,39 +105,8 @@
             padding: 50px 0; /* Add padding to the top and bottom */
         }
 
-        /* Animated Text Styles */
-        .animation-text {
-            position: fixed;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 24px;
-            z-index: 9999; /* Ensure it's above other elements */
-            pointer-events: none; /* Prevent the text from being clickable */
-        }
-
-        .animation-text span {
-            display: inline-block;
-            margin: 0 10px;
-            animation: textAnimation 10s infinite alternate;
-        }
-
-        /* Animation for Text */
-        @keyframes textAnimation {
-            0% {
-                transform: translateY(-20px);
-                color: #ff1dce; /* Neon pink */
-            }
-            50% {
-                transform: translateY(20px);
-                color: #31e7ff; /* Neon blue */
-            }
-            100% {
-                transform: translateY(-20px);
-                color: #ff6700; /* Neon orange */
-            }
-        }
-
+        
+        
         /* Services Section Styles */
         .services {
             display: flex;
@@ -283,20 +252,13 @@
         </div>
     </section>
 
-    <!-- Animated Text Section -->
-    <div class="animation-text">
-        <span>TensorFlow</span>
-        <span>PyTorch</span>
-        <span>Python</span>
-        <span>C++</span>
-        <span>Microsoft Azure</span>
-    </div>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <p>Ready to elevate your digital presence? Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> and let's collaborate!</p>
+            <p>Ready to elevate your digital presence? Click on any service or the Signup button! Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> with any questions!</p>
         </div>
     </section>
 
