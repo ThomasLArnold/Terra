@@ -17,13 +17,53 @@
             justify-content: center;
         }
         h1 {
-            margin: 0 0 20px;
+            margin-bottom: 20px;
             font-size: 24px;
         }
-        .button-link {
-            text-decoration: none;
+        .navbar {
+            position: relative;
+            padding: 10px;
         }
-        button {
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border: 2px solid white;
+        }
+        .hamburger div {
+            background-color: white;
+            height: 3px;
+            margin: 5px 0;
+            width: 30px;
+        }
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: black; /* Ensures the menu stands out on activation */
+        }
+        .nav-menu.active {
+            display: flex; /* Display flex to show the menu */
+        }
+        .nav-link {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            display: block; /* Ensures full width clickable area */
+            border-bottom: 1px solid white; /* Adds a subtle separator */
+        }
+        .services-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button-link button {
             background-color: #4CAF50;
             border: none;
             color: white;
@@ -31,24 +71,43 @@
             text-align: center;
             font-size: 16px;
             margin: 10px;
-            cursor: pointer;
-            display: inline-block;
-            width: 100%; /* Ensures the button fills the anchor */
+            width: 100%;
+        }
+        @media (min-width: 769px) {
+            .services-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Terra's AI Services</h1>
-    <div>
-        <a href="video_generator.html" class="button-link">
-            <button>Video Generator</button>
-        </a>
-        <a href="image_generator.html" class="button-link">
-            <button>Image Generator</button>
-        </a>
-        <a href="terra_ai.html" class="button-link">
-            <button>Personal Assistant</button>
-        </a>
+    <div class="navbar">
+        <h1>Terra's AI Services</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
+    <div class="services-buttons">
+        <a href="terra_ai.html" class="button-link"><button>Personal Assistant</button></a>
+        <a href="video_generator.html" class="button-link"><button>Video Generator</button></a>
+        <a href="image_generator.html" class="button-link"><button>Image Generator</button></a>
+    </div>
+    <div class="nav-menu">
+        <a href="about_owner.html" class="nav-link">About Owner</a>
+        <a href="privacypolicy.html" class="nav-link">Privacy Policy</a>
+        <a href="Careerspage.html" class="nav-link">Careers Page</a>
+        <a href="index.html" class="nav-link">Home Page</a>
+        <a href="https://www.instagram.com/terranovaai/" class="nav-link">Instagram</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
+
