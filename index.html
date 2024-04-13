@@ -21,13 +21,13 @@
         /* Gradient Animation */
         @keyframes gradientChange {
             0% {
-                background: linear-gradient(to bottom, #049bb3, #0696a6, #4fd1c5);
+                background: linear-gradient(to bottom, #0f4c54, #0f4c54, #0f4c54);
             }
             50% {
-                background: linear-gradient(to bottom, #13a899, #0f4c54, #11e4c8);
+                background: linear-gradient(to bottom, #0f4c54, #0f4c54, #0f4c54);
             }
             100% {
-                background: linear-gradient(to bottom, #31e7ff, #06bbd2, #36d0e1);
+                background: linear-gradient(to bottom, #0f4c54, #0f4c54, #0f4c54);
             }
         }
 
@@ -138,7 +138,7 @@
         }
 
         /* Signup and Signin Buttons */
-        .signup-button, .signin-button {
+        .signup-button, .signin-button, .careers-button {
             background-color: #fc2e59;
             color: white;
             padding: 10px 20px;
@@ -150,7 +150,7 @@
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
         }
 
-        .signup-button:hover, .signin-button:hover {
+        .signup-button:hover, .signin-button:hover, .careers-button:hover {
             background-color: #ff1dce; /* Change background color on hover */
         }
 
@@ -171,6 +171,21 @@
         /* Increase hamburger icon size */
         .navigation-toggle {
             font-size: 500px; /* Set font size to 24 pixels */
+        }
+
+        /* Message Styles */
+        .message {
+            text-align: center;
+            margin-top: 20px; /* Add margin for separation */
+        }
+
+        .message p {
+            font-size: 18px;
+        }
+
+        .message a {
+            color: #fff;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -204,25 +219,28 @@
             <p>We blend creativity with technology to craft unique digital experiences for your brand.</p>
         </div>
     </section>
-    
+
     <!-- About Section with Video Background -->
     <section id="about">
-        <!-- Signup and Signin Buttons -->
-        <div class="container" style="margin-top: 20px;">
-            <button class="signup-button" onclick="redirectToServices()">Sign Up</button>
-            <button class="signin-button" onclick="redirectToSignIn()">Sign In</button>
-            <button class="signup-button" onclick="becomeDev()">Become a Dev</button>
-            <button class="signin-button" onclick="becomeSales()">Become a Member of our Sales Team</button>
+        <div class="container">
+            <h2>What is Terra?</h2>
+            <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital pressence. Our mission is to empower businesses by furnishing our developer's expertise needed to evolve in the digital realm. We provide projects to developers, enabling them to craft the code for your website and app, while also offering opportunities for those seeking new career paths in the tech industry
+            <!-- Careers Page Button -->
+           
         </div>
         <!-- Embed YouTube Video -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
-        <div class="container">
-            <h2>What is Terra?</h2>
-            <p>Terra is your gateway to cutting-edge website creation and AI-powered services. With a focus on innovation and personalization, we transform your digital aspirations into reality. Our mission is to empower individuals and businesses by providing them with the tools and expertise to thrive in the digital world.</p>
-        </div>
-        <p>Terra's AI and art generation will be up and running by April 15th, 2024. Website creation is available now.</p> <!-- Updated message -->
     </section>
     
+    <!-- Message for Developers -->
+    <div class="message">
+        <p>Developers can apply to work on projects such as web and app development. 
+            Those thinking of becoming web or app developers 
+            click on the  <button class="careers-button" onclick="redirectToCareers()">Careers Page</button> 
+            and embark on you're development journey. It's free.</p>
+    
+    </div>
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
@@ -230,15 +248,14 @@
             <div class="service-item" onclick="redirectToServices()">
                 <h3>Website Creation</h3>
                 <p>Unlock the potential of your online presence with our website creation services. Choose from our range of packages tailored to suit your needs.</p>
-                <p><strong>Basic Package:</strong> $250</p>
-                <p><strong>Standard Package:</strong> $750</p>
+                <p><strong>Standard Package:</strong> $1800</p>
                 <p><strong>Premium Package:</strong> $2500</p>
             </div>
             <div class="service-item" onclick="redirectToServices()">
                 <h3>App Development</h3>
                 <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
-                <p><strong>Basic App Creation:</strong> Starting at $1500</p>
-                <p><strong>Established App Updates:</strong> Starting at $750</p>
+                <p><strong>Basic App Creation:</strong> Starting at $2500</p>
+                <p><strong>Established App Modifications:</strong> Starting at $1200</p>
             </div>
             <div class="service-item" onclick="redirectToServices()">
                 <h3>AI Art Generation</h3>
@@ -252,8 +269,6 @@
             </div>
         </div>
     </section>
-
-    
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -282,6 +297,11 @@
         // Function to redirect to services.html
         function redirectToServices() {
             window.location.href = 'services.html';
+        }
+
+        // Function to redirect to Careerspage.html
+        function redirectToCareers() {
+            window.location.href = 'Careerspage.html';
         }
     </script>
 </body>
