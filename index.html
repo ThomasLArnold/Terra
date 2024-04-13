@@ -191,6 +191,7 @@
                     <li><a href="./about_owner.html">About Owner</a></li>
                     <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
                     <li><a href="./privacypolicy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
+                    <li><a href="Careerspage.html">Careers Page</a></li> <!-- Added Careers Page -->
                 </ul>
             </nav>
         </div>
@@ -208,7 +209,7 @@
     <section id="about">
         <!-- Signup and Signin Buttons -->
         <div class="container" style="margin-top: 20px;">
-            <button class="signup-button" onclick="redirectToWebsiteCreation()">Sign Up</button>
+            <button class="signup-button" onclick="redirectToServices()">Sign Up</button>
             <button class="signin-button" onclick="redirectToSignIn()">Sign In</button>
             <button class="signup-button" onclick="becomeDev()">Become a Dev</button>
             <button class="signin-button" onclick="becomeSales()">Become a Member of our Sales Team</button>
@@ -226,25 +227,25 @@
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
-            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
+            <div class="service-item" onclick="redirectToServices()">
                 <h3>Website Creation</h3>
                 <p>Unlock the potential of your online presence with our website creation services. Choose from our range of packages tailored to suit your needs.</p>
                 <p><strong>Basic Package:</strong> $250</p>
                 <p><strong>Standard Package:</strong> $750</p>
                 <p><strong>Premium Package:</strong> $2500</p>
             </div>
-            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
+            <div class="service-item" onclick="redirectToServices()">
                 <h3>App Development</h3>
                 <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
                 <p><strong>Basic App Creation:</strong> Starting at $1500</p>
                 <p><strong>Established App Updates:</strong> Starting at $750</p>
             </div>
-            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
+            <div class="service-item" onclick="redirectToServices()">
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
                 <p><strong>Price:</strong> $14.99</p> <!-- Updated price -->
             </div>
-            <div class="service-item" onclick="redirectToWebsiteCreationMoreInfo()">
+            <div class="service-item" onclick="redirectToServices()">
                 <h3>Personal Assistant</h3>
                 <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
                 <p><strong>Price:</strong> $8.99</p> <!-- Updated price -->
@@ -278,9 +279,9 @@
             navigation.classList.toggle('active');
         });
 
-        // Function to redirect to websitecreationmoreinfo.html
-        function redirectToWebsiteCreationMoreInfo() {
-            window.location.href = 'websitecreationmoreinfo.html';
+        // Function to redirect to services.html
+        function redirectToServices() {
+            window.location.href = 'services.html';
         }
     </script>
 </body>
