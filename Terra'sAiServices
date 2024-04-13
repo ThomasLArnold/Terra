@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra's AI Services</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+        .button-link {
+            text-decoration: none;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: 100%; /* Ensures the button fills the anchor */
+        }
+    </style>
+</head>
+<body>
+    <h1>Terra's AI Services</h1>
+    <div>
+        <a href="video_generator.html" class="button-link">
+            <button>Video Generator</button>
+        </a>
+        <a href="image_generator.html" class="button-link">
+            <button>Image Generator</button>
+        </a>
+        <a href="terra_ai.html" class="button-link">
+            <button>Personal Assistant</button>
+        </a>
+    </div>
+</body>
+</html>
