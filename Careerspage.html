@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Career Page</title>
 <style>
     body {
@@ -32,8 +33,7 @@
         line-height: 2;
     }
     .button {
-        display: block;
-        width: 200px;
+        display: inline-block;
         margin: 20px auto;
         padding: 10px 20px;
         text-align: center;
@@ -67,7 +67,7 @@
         font-size: 24px;
     }
     .logo {
-        margin: 0;
+        margin: 0 auto;
     }
     .navigation {
         display: none;
@@ -96,6 +96,27 @@
             display: block;
             margin: 10px 0;
         }
+        .logo {
+            text-align: center;
+        }
+    }
+    .start-learning {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .textbook-box {
+        border: 2px solid #1E90FF;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .youtube-link {
+        color: white;
+        text-decoration: none;
+    }
+    .careers-link {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
     }
 </style>
 </head>
@@ -105,12 +126,12 @@
 <header class="header">
     <div class="container-nav">
         <input type="checkbox" class="navigation-toggle" id="nav-toggle">
-        <label for="nav-toggle">&#9776;</label> <!-- Hamburger menu icon -->
+        <label for="nav-toggle" onclick="toggleNav()">&#9776;</label> <!-- Hamburger menu icon -->
         <h1 class="logo">Terra</h1>
         <nav class="navigation">
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="terra_ai.html">Terra's AI</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="./video_generator.html">Video Generator</a></li>
                 <li><a href="./image_generator.html">Image Generator</a></li>
@@ -139,7 +160,27 @@
             <p>At Terranovaai, we value our sales team members!! Have a flexible work schedule and live anywhere in the U.S. This position requires a Laptop and a phone. You will be speaking with business owners over the phone or in person in your local area. You will close sales and will be paid out the same day!!! Every time you make a website or app sale, you give Terranovaai's developers more projects to complete and drive revenue for the Company, securing capital for our mission to revolutionize businesses and advance technology.</p>
         </div>
     </div>
+
+    <div class="start-learning">
+        <h2>Start Learning</h2>
+        <p>Click here to start watching my playlists <a href="https://www.youtube.com/@terranovaai/playlists" class="youtube-link">https://www.youtube.com/@terranovaai/playlists</a>. You can also use the textbook for reference; it is free at no cost.</p>
+        <div class="textbook-box">
+            <h3>HTML Textbook</h3>
+            <button class="button">Download</button>
+        </div>
+        <div class="textbook-box">
+            <h3>Web Design Textbook</h3>
+            <button class="button">Download</button>
+        </div>
+    </div>
 </div>
+
+<script>
+    function toggleNav() {
+        var nav = document.querySelector('.navigation');
+        nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
 
 </body>
 </html>
