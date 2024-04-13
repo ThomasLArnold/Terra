@@ -22,14 +22,23 @@
             padding: 20px 0; /* Add padding to the top and bottom */
         }
 
+        .navigation {
+            display: none; /* Hide navigation by default */
+            text-align: center;
+        }
+
+        .navigation.active {
+            display: block; /* Show navigation when active */
+        }
+
         .navigation ul {
             list-style: none; /* Remove default list styles */
             padding: 0;
         }
 
         .navigation ul li {
-            display: inline-block; /* Display items horizontally */
-            margin-right: 20px; /* Add space between items */
+            display: block; /* Display items vertically */
+            margin-bottom: 10px; /* Add space between items */
         }
 
         .navigation ul li a {
@@ -43,6 +52,17 @@
             color: #0d5483; /* Change color on hover */
         }
 
+        /* Hamburger Icon Styles */
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+        }
+
         /* Services Section Styles */
         .services {
             display: flex;
@@ -50,27 +70,27 @@
             align-items: center;
             flex-direction: column; /* Center items vertically */
             padding: 80px 0;
+            background-color: black; /* Set the background to black */
+            color: white; /* Text color */
         }
 
         .service-item {
             flex: 1;
             padding: 20px;
-            background-color: #1a1a1a; /* Dark background */
+            background-color: black; /* Set service boxes to black */
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* White box shadow */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
             text-align: center;
             margin: 20px 0; /* Add spacing between service items */
             max-width: 90%; /* Limit width of service items */
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
             cursor: pointer; /* Change cursor to pointer */
+            color: white; /* Ensure text within the boxes is white */
         }
 
         .service-item:hover {
-            background-color: #0d5483; /* Darker blue background on hover */
-        }
-
-        .service-item h3 {
-            margin-bottom: 10px;
+            background-color: #fc2e59; /* Change background color on hover */
+            color: white; /* Ensure text color remains white on hover */
         }
 
         /* Button Styles */
@@ -106,6 +126,7 @@
     <!-- Navigation -->
     <header class="header">
         <div class="container">
+            <span class="hamburger" onclick="toggleNav()">&#9776;</span> <!-- Hamburger menu icon -->
             <h1 class="logo">Terra</h1>
             <nav class="navigation">
                 <ul>
@@ -116,6 +137,7 @@
                     <li><a href="./about_owner.html">About Owner</a></li> <!-- Changed to relative path -->
                     <li><a href="./instagram.html">Instagram</a></li>
                     <li><a href="./privacy policy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
+                    <li><a href="./Careerspage.html">Careers</a></li> <!-- Added Careers page -->
                 </ul>
             </nav>
         </div>
@@ -124,23 +146,16 @@
     <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2>Website Creation</h2>
-            <div class="service-item" onclick="redirectToBottom()">
-                <h3>Basic Package</h3>
-                <p>A 3-page site for a personal project or side hustle. Includes:</p>
-                <p>Functional website with 10-day delivery</p>
-                <p>Price: $250</p>
-                <p>Expedited Delivery (within 3 days): Additional $340</p>
-            </div>
+            <h2>Website Development</h2>
             <div class="service-item" onclick="redirectToBottom()">
                 <h3>Standard Package</h3>
                 <p>A business startup site with e-commerce functionality. Includes:</p>
-                <p>Functional website with 30-day delivery and a extra$400 for 7 day delivery</p>
+                <p>Functional website with 30-day delivery and an extra $400 for 7-day delivery</p>
                 <p>5 pages, 3 revisions</p>
                 <p>E-commerce functionality (up to 3 products)</p>
                 <p>Payment processing, opt-in form for email capability</p>
                 <p>Speed optimization, hosting setup, social media icons</p>
-                <p>Price: $750</p>
+                <p>Price: $1800</p>
             </div>
             <div class="service-item" onclick="redirectToBottom()">
                 <h3>Premium Package</h3>
@@ -159,7 +174,7 @@
     <!-- Additional Services Section -->
     <section class="services">
         <div class="container">
-            <h2>Additional Services</h2>
+            <h2>App Development</h2>
             <div class="service-item" onclick="redirectToBottom()">
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
@@ -170,34 +185,33 @@
                 <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
                 <p><strong>Price:</strong> $8.99</p> <!-- Updated price -->
             </div>
-            <div class="service-item" onclick="redirectToBottom()">
-                <h3>App Development</h3>
-                <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
-                <p><strong>Basic App Creation:</strong> Starting at $1500</p>
-                <p><strong>Established App Updates:</strong> Starting at $750</p>
-            </div>
         </div>
     </section>
 
-    
     <!-- Stripe Payment Button -->
     <a href="https://buy.stripe.com/4gw9CS4KcaqM0SYaEE" target="_blank" rel="noopener noreferrer" class="signup-button">
         Submit Payment
     </a>
- <!-- Order Website and App Button -->
+
+    <!-- Order Website and App Button -->
     <a href="https://forms.gle/jqUcKYjeWoDpCBJV7" target="_blank" rel="noopener noreferrer" class="signup-button">
         Order your Website and App
     </a>
-<!-- Terra's AI Services Button -->
+
+    <!-- Terra's AI Services Button -->
     <a href="https://forms.gle/YnDsEVjThCFPWHtz6" target="_blank" rel="noopener noreferrer" class="signup-button">
         Terra's AI services
     </a>
 
     <script>
+        function toggleNav() {
+            var navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active'); // Toggle the active class on click
+        }
+
         function redirectToBottom() {
             window.location.href = "#googleFormAnchor"; // Redirect to the bottom of the page where the Google Form is located
         }
     </script>
 </body>
 </html>
-
