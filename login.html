@@ -69,7 +69,8 @@
             color: #000000; /* Text color on focus */
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .form-container input[type="submit"] {
+        .form-container input[type="submit"],
+        .form-container button {
             background-color: #ff00ff; /* Neon pink color */
             color: #ffffff;
             padding: 14px 30px;
@@ -81,7 +82,8 @@
             font-size: 18px;
             text-transform: uppercase;
         }
-        .form-container input[type="submit"]:hover {
+        .form-container input[type="submit"]:hover,
+        .form-container button:hover {
             background-color: #ff3399; /* Lighter neon pink color on hover */
         }
     </style>
@@ -99,10 +101,13 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required><br>
                     <input type="submit" value="Login">
+                    <button type="button" id="account-setup-btn" onclick="window.location.href='https://forms.gle/s2hJRJoM3Gg9Bm7e8';">Account Setup</button> <!-- Redirect to Account Setup form -->
                 </form>
-                <a href="sign up.html"><button id="signup-btn">Sign Up</button></a> <!-- Redirects to sign up.html -->
             </div>
         </div>
     </section>
+    <script>
+        // If you need additional JavaScript functionality, you can add it here.
+    </script>
 </body>
 </html>
