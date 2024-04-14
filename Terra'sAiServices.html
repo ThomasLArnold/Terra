@@ -3,108 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terra's AI Services</title>
+    <title>AI Services</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
     <style>
+        /* Global Styles */
         body {
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
-            height: 100vh;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 0;
+            background: linear-gradient(to bottom right, #00ff00, #0000ff); /* Updated background gradient */
+            color: #ffffff; /* Text color */
+            transition: background-color 0.3s ease;
         }
-        h1 {
-            margin-bottom: 20px;
+
+        /* Navigation Styles */
+        .header {
+            text-align: center; /* Center align the navigation */
+            padding: 20px 0; /* Add padding to the top and bottom */
+        }
+
+        .navigation {
+            display: none; /* Hide navigation by default */
+            text-align: center;
+        }
+
+        .navigation.active {
+            display: block; /* Show navigation when active */
+        }
+
+        .navigation ul {
+            list-style: none; /* Remove default list styles */
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: block; /* Display items vertically */
+            margin-bottom: 10px; /* Add space between items */
+        }
+
+        .navigation ul li a {
+            text-decoration: none; /* Remove underline from links */
+            color: #fff; /* Link text color */
+            font-size: 18px; /* Font size */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        .navigation ul li a:hover {
+            color: #0d5483; /* Change color on hover */
+        }
+
+        /* Hamburger Icon Styles */
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            cursor: pointer;
+            color: #fff;
             font-size: 24px;
         }
-        .navbar {
-            position: relative;
-            padding: 10px;
-        }
-        .hamburger {
-            cursor: pointer;
+
+        /* Services Section Styles */
+        .services {
             display: flex;
-            flex-direction: column;
-            padding: 10px;
-            border: 2px solid white;
-        }
-        .hamburger div {
-            background-color: white;
-            height: 3px;
-            margin: 5px 0;
-            width: 30px;
-        }
-        .nav-menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 40px;
-            left: 0;
-            z-index: 1;
-            width: 100%;
-            background-color: black; /* Ensures the menu stands out on activation */
-        }
-        .nav-menu.active {
-            display: flex; /* Display flex to show the menu */
-        }
-        .nav-link {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            font-size: 16px;
-            display: block; /* Ensures full width clickable area */
-            border-bottom: 1px solid white; /* Adds a subtle separator */
-        }
-        .services-buttons {
-            display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            flex-direction: column; /* Center items vertically */
+            padding: 80px 0;
+            background-color: black; /* Set the background to black */
+            color: white; /* Text color */
         }
-        .button-link button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
+
+        .service-item {
+            flex: 1;
+            padding: 20px;
+            background-color: black; /* Set service boxes to black */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
             text-align: center;
-            font-size: 16px;
-            margin: 10px;
-            width: 100%;
+            margin: 20px 0; /* Add spacing between service items */
+            max-width: 90%; /* Limit width of service items */
+            transition: background-color 0.3s ease; /* Smooth transition for background color change */
+            cursor: pointer; /* Change cursor to pointer */
+            color: white; /* Ensure text within the boxes is white */
         }
-        @media (min-width: 769px) {
-            .services-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
+
+        .service-item:hover {
+            background-color: #fc2e59; /* Change background color on hover */
+            color: white; /* Ensure text color remains white on hover */
+        }
+
+        /* Button Styles */
+        .button {
+            background-color: #fc2e59; /* Consistent button background color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Display buttons inline */
+            margin-right: 10px; /* Add space between buttons */
+        }
+
+        .button:hover {
+            background-color: #ff1dce; /* Change background color on hover */
+        }
+
+        /* Button Container Styles */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for multiple buttons */
+        }
+
+        /* Center the Signup Button */
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>Terra's AI Services</h1>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <span class="hamburger" onclick="toggleNav()">&#9776;</span> <!-- Hamburger menu icon -->
+            <h1 class="logo">Terra</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="terra_ai.html">Terra's AI</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./video_generator.html">Video Generator</a></li>
+                    <li><a href="./image_generator.html">Image Generator</a></li>
+                    <li><a href="./about_owner.html">About Owner</a></li>
+                    <li><a href="./instagram.html">Instagram</a></li>
+                    <li><a href="./privacy policy.html">Privacy Policy</a></li>
+                    <li><a href="./Careerspage.html">Careers</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-    <div class="services-buttons">
-        <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" class="button-link"><button>Personal Assistant</button></a>
-        <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" class="button-link"><button>AI Art Gen</button></a>
-    </div>
-    <div class="nav-menu">
-        <a href="about_owner.html" class="nav-link">About Owner</a>
-        <a href="privacypolicy.html" class="nav-link">Privacy Policy</a>
-        <a href="Careerspage.html" class="nav-link">Careers Page</a>
-        <a href="index.html" class="nav-link">Home Page</a>
-        <a href="https://www.instagram.com/terranovaai/" class="nav-link">Instagram</a>
+    </header>
+    
+    <!-- Terra's AI Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>AI Services</h2>
+            <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" rel="noopener noreferrer" class="service-item">
+                <h3>AI Art Generation</h3>
+                <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
+                <p><strong>Price:</strong> $14.99</p>
+            </a>
+            <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" rel="noopener noreferrer" class="service-item">
+                <h3>Personal Assistant</h3>
+                <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
+                <p><strong>Price:</strong> $8.99</p>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Button Container for Stripe and Login -->
+    <div class="container button-container">
+        <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" rel="noopener noreferrer" class="button">
+            Personal Assistant
+        </a>
+        <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" rel="noopener noreferrer" class="button">
+            AI Art Gen
+        </a>
+        <a href="login.html" class="button">Login</a> <!-- Login button -->
     </div>
 
     <script>
-        function toggleMenu() {
-            document.querySelector('.nav-menu').classList.toggle('active');
+        function toggleNav() {
+            var navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active'); // Toggle the active class on click
         }
     </script>
 </body>
