@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Setup | Terra</title>
+    <style>
+        /* Styling inherited and enhanced from your login page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #00ff00, #0000ff);
+            color: #ffffff;
+        }
+        .container {
+            width: 90%; /* Increased container width */
+            margin: 0 auto;
+        }
+        .signup {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+            padding: 40px; /* Increased padding */
+            border-radius: 25px;
+            box-shadow: 0px 0px 20px 0px rgba(255,255,255,0.5); /* Brighter box shadow */
+            max-width: 700px; /* Increased max width */
+            margin: 0 auto;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 15px; /* Increased spacing */
+            color: #ffffff;
+            font-size: 20px; /* Larger text */
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="tel"],
+        .form-container input[type="number"],
+        .form-container input[type="password"],
+        .form-container input[type="date"],
+        .form-container select {
+            width: calc(100% - 20px);
+            padding: 16px; /* Increased padding */
+            margin-bottom: 25px; /* Increased spacing */
+            border: none;
+            border-radius: 30px; /* More rounded borders */
+            font-size: 18px; /* Larger text */
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            outline: none;
+        }
+        .form-container input[type="submit"],
+        .form-container button {
+            background-color: #ff00ff;
+            color: #ffffff;
+            padding: 16px 40px; /* Larger buttons */
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 20px; /* Larger text */
+            text-transform: uppercase;
+        }
+        .form-container input[type="submit"]:hover,
+        .form-container button:hover {
+            background-color: #ff3399; /* Lighter neon pink color on hover */
+        }
+    </style>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const form = event.target;
+            const data = new FormData(form);
+            const fetchOptions = {
+                method: 'POST',
+                body: data,
+            };
+            fetch(form.action, fetchOptions)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    window.location.href = 'https://terranovaai.net/login.html'; // Redirect on success to the specified URL
+                } else {
+                    alert('Failed to create account. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+            });
+        }
+    </script>
+</head>
+<body>
+    <section class="signup">
+        <div class="container">
+            <div class="form-container">
+                <h2>Setup Your Account</h2>
+                <form onsubmit="handleFormSubmit(event)" action="https://script.google.com/macros/s/AKfycbzU2VxUvyG4FFRJv66IMat6lRRMCLihi92JU4QRlQ0XbTayUZbLQW1Fm5WC5rbJ-I_s/exec" method="post">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required><br>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required><br>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br>
+                    <input type="submit" value="Create Account">
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
