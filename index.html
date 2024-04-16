@@ -21,13 +21,13 @@
         /* Gradient Animation */
         @keyframes gradientChange {
             0% {
-                background: linear-gradient(to bottom, #0f4c54, #0f4c54, #0f4c54);
+                background: linear-gradient(to bottom, #050e10, #060809, #010102);
             }
             50% {
-                background: linear-gradient(to bottom, #0f4c54, #0f4c54, #0f4c54);
+                background: linear-gradient(to bottom, #020303, #010101, #070909);
             }
             100% {
-                background: linear-gradient(to bottom, #0f4c54, #0f4c54, #0f4c54);
+                background: linear-gradient(to bottom, #020204, #0b060d, #050408);
             }
         }
 
@@ -48,7 +48,7 @@
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(18, 174, 192, 0.9);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -105,8 +105,6 @@
             padding: 50px 0; /* Add padding to the top and bottom */
         }
 
-        
-        
         /* Services Section Styles */
         .services {
             display: flex;
@@ -187,6 +185,92 @@
             color: #fff;
             text-decoration: underline;
         }
+
+        /* Spline Input Section */
+        .spline-input {
+            padding: 80px 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        /* Personal Assistant Section Styles */
+        #personal-assistant .message-box {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #personal-assistant .message-box input[type="text"] {
+            width: 80%;
+            padding: 15px; /* Increased padding for larger text box */
+            margin-bottom: 20px;
+            border-radius: 10px; /* Increased border radius for a rounded look */
+            border: 1px solid #ccc;
+            font-size: 18px; /* Increased font size for better readability */
+        }
+
+        #personal-assistant .response-box {
+            background-color: #f0f0f0;
+            padding: 20px; /* Increased padding for larger response box */
+            margin-bottom: 20px;
+            border-radius: 10px; /* Increased border radius for a rounded look */
+            border: 1px solid #ccc;
+            font-size: 18px; /* Increased font size for better readability */
+        }
+
+        #personal-assistant .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        #personal-assistant .buttons button {
+            background-color: #fc2e59;
+            color: white;
+            padding: 15px 30px; /* Increased padding for larger buttons */
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s ease; /* Smooth transition for background color change */
+        }
+
+        #personal-assistant .buttons button:hover {
+            background-color: #ff1dce; /* Change background color on hover */
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            background-color: black;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 18px;
+        }
+
+        .contact a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .contact a:hover {
+            color: #ff1dce;
+        }
+
+        /* Footer Section Styles */
+        .footer {
+            background-color: #0f4c54;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -206,7 +290,6 @@
                     <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
                     <li><a href="./about_owner.html">About Owner</a></li>
                     <li><a href="./privacypolicy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
-
                 </ul>
             </nav>
         </div>
@@ -224,9 +307,7 @@
     <section id="about">
         <div class="container">
             <h2>What is Terra?</h2>
-            <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital pressence. Our mission is to empower businesses by furnishing our developer's expertise needed to evolve in the digital realm. We provide projects to developers, enabling them to craft the code for your website and app, while also offering opportunities for those seeking new career paths in the tech industry
-            <!-- Careers Page Button -->
-           
+            <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital presence. Our mission is to empower businesses by furnishing our developer's expertise needed to evolve in the digital realm. We provide projects to developers, enabling them to craft the code for your website and app, while also offering opportunities for those seeking new career paths in the tech industry.</p>
         </div>
         <!-- Embed YouTube Video -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
@@ -237,35 +318,128 @@
         <p>Developers can apply to work on projects such as web and app development. 
             Those thinking of becoming web or app developers 
             click on the  <button class="careers-button" onclick="redirectToCareers()">Careers Page</button> 
-            and embark on you're development journey. It's free.</p>
-    
+            and embark on your development journey. It's free.</p>
     </div>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Website Development and Design Section -->
+    <section id="website-design" class="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>Website Development and Design</h2>
+            <!-- Standard Package -->
             <div class="service-item" onclick="redirectToServices()">
-                <h3>Website Creation</h3>
-                <p>Unlock the potential of your online presence with our website creation services. Choose from our range of packages tailored to suit your needs.</p>
-                <p><strong>Standard Package:</strong> $1800</p>
-                <p><strong>Premium Package:</strong> $2500</p>
+                <h3>Standard Package</h3>
+                <p>A business startup site with e-commerce functionality. Includes:</p>
+                <ul>
+                    <li>Functional website with 30-day delivery and an extra $400 for 7-day delivery</li>
+                    <li>5 pages, 3 revisions</li>
+                    <li>E-commerce functionality (up to 3 products)</li>
+                    <li>Payment processing, opt-in form for email capability</li>
+                    <li>Speed optimization, hosting setup, social media icons</li>
+                </ul>
+                <p><strong>Price:</strong> $1800</p>
             </div>
+
+            <!-- Premium Package -->
             <div class="service-item" onclick="redirectToServices()">
-                <h3>App Development</h3>
-                <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
-                <p><strong>Basic App Creation:</strong> Starting at $2500</p>
-                <p><strong>Established App Modifications:</strong> Starting at $1200</p>
+                <h3>Premium Package</h3>
+                <p>A premium business site for upscaling your business. Includes:</p>
+                <ul>
+                    <li>Functional website with 45-day delivery</li>
+                    <li>10 pages, unlimited revisions</li>
+                    <li>E-commerce functionality (up to 20 products)</li>
+                    <li>Payment processing, opt-in form for email functionality</li>
+                    <li>Speed optimization, hosting setup, social media icons</li>
+                </ul>
+                <p><strong>Price:</strong> $2,500</p>
+                <p>Expedited Delivery (within 10 days): Additional $650</p>
             </div>
-            <div class="service-item" onclick="redirectToServices()">
+        </div>
+    </section>
+
+    <!-- Spline Input Section -->
+    <section class="spline-input">
+        <div class="container">
+            <h2>Utilize our 3D designs and Animations</h2>
+            <!-- Include Spline Viewer -->
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/t1z08vV3u6tk7Oug/scene.splinecode"></spline-viewer>
+        </div>
+    </section>
+
+    <!-- App Development Section -->
+    <section id="app-development" class="services">
+        <div class="container">
+            <h2>App Development</h2>
+            <!-- App Development Packages -->
+            <div class="service-item" onclick="redirectToAppDevelopment()">
+                <h3>Basic Package</h3>
+                <p>Get started with your mobile app development journey with our Basic Package, ideal for startups and small businesses.</p>
+                <ul>
+                    <li>Android or iOS platform</li>
+                    <li>2-3 core features</li>
+                    <li>Simple UI/UX design</li>
+                    <li>Testing and bug fixes</li>
+                    <li>Delivery within 4-6 weeks</li>
+                </ul>
+                <p><strong>Price:</strong> $3000</p>
+            </div>
+            <div class="service-item" onclick="redirectToAppDevelopment()">
+                <h3>Advanced Package</h3>
+                <p>Elevate your app with our Advanced Package, suitable for businesses looking to integrate complex functionalities and scalable solutions.</p>
+                <ul>
+                    <li>Android and iOS platforms</li>
+                    <li>5-7 core features</li>
+                    <li>Custom UI/UX design</li>
+                    <li>API integration</li>
+                    <li>Testing, deployment, and maintenance</li>
+                    <li>Delivery within 8-12 weeks</li>
+                </ul>
+                <p><strong>Price:</strong> $6000</p>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/NQajQ4jWUX8ksHzR/scene.splinecode"></spline-viewer>
+
+    <!-- AI Services Section -->
+    <section id="ai-services" class="services">
+        <div class="container">
+            <h2>AI Services</h2>
+            <!-- Personal Assistant -->
+            <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" rel="noopener noreferrer" class="service-item">
+                <h3>Personal Assistant</h3>
+                <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information or simply learning a new language, our AI-powered assistant is here to help.</p>
+                <p><strong>Price:</strong> $8.99</p>
+            </a>
+            <!-- AI Art Generation -->
+            <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" rel="noopener noreferrer" class="service-item">
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
-                <p><strong>Price:</strong> $14.99</p> <!-- Updated price -->
-            </div>
-            <div class="service-item" onclick="redirectToServices()">
-                <h3>Personal Assistant</h3>
-                <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
-                <p><strong>Price:</strong> $8.99</p> <!-- Updated price -->
+                <p><strong>Price:</strong> $14.99</p>
+            </a>
+        </div>
+    </section>
+<!-- Sleek and innovative Ai Section -->
+<section id="sleek-ai" class="spline-input">
+    <div class="container">
+        <h2>Sleek and innovative AI</h2>
+        <!-- Include Spline Viewer -->
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/NkTs70N1I4tJnwsA/scene.splinecode"></spline-viewer>
+    </div>
+</section>
+    <!-- Personal Assistant Section -->
+    <section id="personal-assistant">
+        <div class="container">
+            <h2>Personal Assistant</h2>
+            <div class="message-box">
+                <input type="text" placeholder="Type your message here...">
+                <div class="response-box"></div>
+                <div class="buttons">
+                    <button onclick="redirectToStripe()">Ai Vision</button>
+                    <button onclick="sendRequest()">Send</button>
+                </div>
             </div>
         </div>
     </section>
@@ -274,7 +448,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <p>Ready to elevate your digital presence? Click on any service or the Signup button! Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> with any questions!</p>
+            <p>Ready to elevate your digital presence? Click on any service or click the three lines at the top of the page! Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> with any questions!</p>
         </div>
     </section>
 
@@ -302,6 +476,23 @@
         // Function to redirect to Careerspage.html
         function redirectToCareers() {
             window.location.href = 'Careerspage.html';
+        }
+
+        // Function to redirect to App Development page
+        function redirectToAppDevelopment() {
+            window.location.href = 'AppDevelopment.html';
+        }
+
+        // Function to redirect to Stripe when Ai Vision button is clicked
+        function redirectToStripe() {
+            window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
+        }
+
+        // Function to handle sending request in Personal Assistant section
+        function sendRequest() {
+            // Add your logic here for sending the request
+            alert("You don't have an account yet. Let's set that up for you.");
+            window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
         }
     </script>
 </body>
