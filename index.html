@@ -12,23 +12,15 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scrollbar */
-            background: linear-gradient(to bottom, #08c7d8, #13b6f1, #4fd1c5); /* Initial gradient colors */
-            animation: gradientChange 10s infinite alternate; /* Gradient animation */
-            position: relative;
-            color: #fff; /* Change text color to white for better contrast */
+            background-color: white; /* Set background to white */
+            color: black; /* Set text color to black */
+            transition: background-color 0.3s ease; /* Smooth transition for background color change */
         }
 
-        /* Gradient Animation */
-        @keyframes gradientChange {
-            0% {
-                background: linear-gradient(to bottom, #050e10, #060809, #010102);
-            }
-            50% {
-                background: linear-gradient(to bottom, #020303, #010101, #070909);
-            }
-            100% {
-                background: linear-gradient(to bottom, #020204, #0b060d, #050408);
-            }
+        /* Dark mode */
+        body.dark-mode {
+            background-color: black; /* Set background to black */
+            color: white; /* Set text color to white */
         }
 
         /* Navigation Styles */
@@ -70,7 +62,7 @@
 
         .navigation ul li a {
             text-decoration: none; /* Remove underline from links */
-            color: #000; /* Link text color */
+            color: black; /* Link text color */
             font-size: 16px; /* Font size */
             display: block;
         }
@@ -81,8 +73,8 @@
 
         /* About Section Styles */
         #about {
-            background-color: black; /* Black background for about section */
-            color: white; /* White text color */
+            background-color: white; /* White background for about section */
+            color: black; /* Black text color */
             padding: 150px 0; /* Longer padding */
             text-align: center;
             position: relative;
@@ -112,14 +104,21 @@
             align-items: center;
             flex-direction: column; /* Center items vertically */
             padding: 80px 0;
-            background-color: black; /* Set the background to black */
-            color: white; /* Text color */
+            background-color: white; /* Set the background to white */
+            color: black; /* Text color */
+        }
+
+        .services h2 {
+            font-family: 'Arial Black', sans-serif; /* Different font */
+            font-size: 36px; /* Larger font size */
+            margin-bottom: 30px; /* Add space below title */
+            text-align: center; /* Center align title */
         }
 
         .service-item {
             flex: 1;
             padding: 20px;
-            background-color: black; /* Set service boxes to black */
+            background-color: white; /* Set service boxes to white */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
             text-align: center;
@@ -127,7 +126,7 @@
             max-width: 90%; /* Limit width of service items */
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
             cursor: pointer; /* Change cursor to pointer */
-            color: white; /* Ensure text within the boxes is white */
+            color: black; /* Ensure text within the boxes is black */
         }
 
         .service-item:hover {
@@ -175,6 +174,11 @@
         .message {
             text-align: center;
             margin-top: 20px; /* Add margin for separation */
+            background-color: white; /* White background for message section */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+            transition: background-color 0.3s ease; /* Smooth transition for background color change */
         }
 
         .message p {
@@ -182,19 +186,31 @@
         }
 
         .message a {
-            color: #fff;
-            text-decoration: underline;
+            color: #fc2e59;
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for text color change */
+        }
+
+        .message a:hover {
+            color: #ff1dce; /* Change text color on hover */
         }
 
         /* Spline Input Section */
         .spline-input {
             padding: 80px 0;
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
             text-align: center;
         }
 
         /* Personal Assistant Section Styles */
+        #personal-assistant {
+            background-color: white; /* Set background to white */
+            color: black; /* Set text color to black */
+            padding: 80px 0; /* Add padding */
+            text-align: center; /* Center align content */
+        }
+
         #personal-assistant .message-box {
             margin-top: 50px;
             text-align: center;
@@ -241,8 +257,8 @@
 
         /* Contact Section Styles */
         .contact {
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
             padding: 80px 0;
             text-align: center;
         }
@@ -252,7 +268,7 @@
         }
 
         .contact a {
-            color: #fff;
+            color: #000;
             text-decoration: underline;
         }
 
@@ -271,9 +287,31 @@
         .footer p {
             font-size: 16px;
         }
+
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fc2e59;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999;
+            transition: background-color 0.3s ease; /* Smooth transition for background color change */
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #ff1dce; /* Change background color on hover */
+        }
     </style>
 </head>
-<body>
+<body class="dark-mode">
+    <!-- Dark mode toggle button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Light Mode</button>
+
     <!-- Navigation -->
     <header class="header">
         <div class="container">
@@ -313,13 +351,7 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
     </section>
     
-    <!-- Message for Developers -->
-    <div class="message">
-        <p>Developers can apply to work on projects such as web and app development. 
-            Those thinking of becoming web or app developers 
-            click on the  <button class="careers-button" onclick="redirectToCareers()">Careers Page</button> 
-            and embark on your development journey. It's free.</p>
-    </div>
+  
 
     <!-- Website Development and Design Section -->
     <section id="website-design" class="services">
@@ -399,8 +431,15 @@
         </div>
     </section>
 
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/NQajQ4jWUX8ksHzR/scene.splinecode"></spline-viewer>
+    <!-- Utilize our 3D designs and Animations Section -->
+    <section class="spline-input">
+        <div class="container">
+            <h2>Utilize our 3D designs and Animations</h2>
+            <!-- Include Spline Viewer -->
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/NQajQ4jWUX8ksHzR/scene.splinecode"></spline-viewer>
+        </div>
+    </section>
 
     <!-- AI Services Section -->
     <section id="ai-services" class="services">
@@ -420,6 +459,7 @@
             </a>
         </div>
     </section>
+
 <!-- Sleek and innovative Ai Section -->
 <section id="sleek-ai" class="spline-input">
     <div class="container">
@@ -429,6 +469,7 @@
         <spline-viewer url="https://prod.spline.design/NkTs70N1I4tJnwsA/scene.splinecode"></spline-viewer>
     </div>
 </section>
+
     <!-- Personal Assistant Section -->
     <section id="personal-assistant">
         <div class="container">
@@ -464,35 +505,59 @@
         const navToggle = document.querySelector('#nav-toggle');
         const navigation = document.querySelector('.navigation');
 
-        navToggle.addEventListener('click', () => {
-            navigation.classList.toggle('active');
+        navToggle.addEventListener('change', () => {
+            if (navToggle.checked) {
+                navigation.classList.add('active');
+            } else {
+                navigation.classList.remove('active');
+            }
         });
+    </script>
 
-        // Function to redirect to services.html
-        function redirectToServices() {
-            window.location.href = 'services.html';
+    <!-- JavaScript to toggle dark mode -->
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const buttonText = document.querySelector('.dark-mode-toggle');
+            if (body.classList.contains('dark-mode')) {
+                buttonText.textContent = 'Light Mode';
+            } else {
+                buttonText.textContent = 'Dark Mode';
+            }
         }
+    </script>
 
-        // Function to redirect to Careerspage.html
-        function redirectToCareers() {
-            window.location.href = 'Careerspage.html';
-        }
-
-        // Function to redirect to App Development page
-        function redirectToAppDevelopment() {
-            window.location.href = 'AppDevelopment.html';
-        }
-
-        // Function to redirect to Stripe when Ai Vision button is clicked
-        function redirectToStripe() {
-            window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
-        }
-
-        // Function to handle sending request in Personal Assistant section
+    <!-- JavaScript to handle personal assistant -->
+    <script>
         function sendRequest() {
-            // Add your logic here for sending the request
-            alert("You don't have an account yet. Let's set that up for you.");
+            const messageInput = document.querySelector('.message-box input[type="text"]');
+            const responseBox = document.querySelector('.response-box');
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                // Simulate server response
+                const response = 'Sorry, I am just a demo. But you can visit our <a href="#ai-services">AI Services</a> section to explore more!';
+                responseBox.innerHTML = response;
+                messageInput.value = '';
+            }
+        }
+
+        function redirectToStripe() {
+            window.location.href = 'https://buy.stripe.com/bIY2aqgsUgPa45a8wz';
+        }
+    </script>
+
+    <!-- JavaScript to redirect to services -->
+    <script>
+        function redirectToServices() {
             window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
+        }
+    </script>
+
+    <!-- JavaScript to redirect to app development -->
+    <script>
+        function redirectToAppDevelopment() {
+            window.location.href = 'https://buy.stripe.com/bIY2aqgsUgPa45a8wz';
         }
     </script>
 </body>
