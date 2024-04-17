@@ -170,29 +170,44 @@
     </section>
 
     <!-- App Development Section -->
-    <section class="services">
+    <section id="app-development" class="services">
         <div class="container">
             <h2>App Development</h2>
-            <div class="service-item" onclick="redirectToBottom()">
-                <h3>App Development</h3>
-                <p>Transform your ideas into reality with our custom app development service. Whether you need a new app created from the ground up or updates and additions to an existing one, we've got you covered.</p>
-                <p><strong>Basic App Creation:</strong> Starting at $2500</p>
-                <p><strong>Established App Modifications:</strong> Starting at $1200</p>
+            <!-- App Development Packages -->
+            <div class="service-item" onclick="redirectToAppDevelopment()">
+                <h3>Basic Package</h3>
+                <p>Get started with your mobile app development journey with our Basic Package, ideal for startups and small businesses.</p>
+                <p>Android or iOS platform</p>
+                <p>2-3 core features</p>
+                <p>Simple UI/UX design</p>
+                <p>Testing and bug fixes</p>
+                <p>Delivery within 4-6 weeks</p>
+                <p><strong>Price:</strong> $3000</p>
+            </div>
+            <div class="service-item" onclick="redirectToAppDevelopment()">
+                <h3>Advanced Package</h3>
+                <p>Elevate your app with our Advanced Package, suitable for businesses looking to integrate complex functionalities and scalable solutions.</p>
+                <p>Android and iOS platforms</p>
+                <p>5-7 core features</p>
+                <p>Custom UI/UX design</p>
+                <p>API integration</p>
+                <p>Testing, deployment, and maintenance</p>
+                <p>Delivery within 8-12 weeks</p>
+                <p><strong>Price:</strong> $6000</p>
             </div>
         </div>
     </section>
-
-    
     
     <!-- Stripe Payment Button -->
-    <a href="https://buy.stripe.com/5kA6qG0tWfL6bxC6ou" target="_blank" rel="noopener noreferrer" class="signup-button">            
-        Order Your Website
-    </a>
- <!-- Order Website and App Button -->
-    <a href="https://buy.stripe.com/aEUdT81y01UgfNSfZ6" target="_blank" rel="noopener noreferrer" class="signup-button">
-        Order your App
-    </a>
-                                                                    <p>Make sure to adjust your package at checkout</p>
+    <div class="container">
+        <a href="https://buy.stripe.com/5kA6qG0tWfL6bxC6ou" target="_blank" rel="noopener noreferrer" class="signup-button">            
+            Order Your Website
+        </a>
+        <a href="https://buy.stripe.com/aEUdT81y01UgfNSfZ6" target="_blank" rel="noopener noreferrer" class="signup-button">
+            Order your App
+        </a>
+    </div>
+    <p>Make sure to adjust your package at checkout</p>
 
     <script>
         function toggleNav() {
@@ -200,8 +215,8 @@
             navigation.classList.toggle('active'); // Toggle the active class on click
         }
 
-        function redirectToBottom() {
-            window.location.href = "#googleFormAnchor"; // Redirect to the bottom of the page where the Google Form is located
+        function redirectToAppDevelopment() {
+            window.location.href = "#app-development"; // Redirect to the App Development section
         }
     </script>
 </body>
