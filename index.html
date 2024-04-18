@@ -16,7 +16,17 @@
             color: black; /* Set text color to black */
             transition: background-color 0.3s ease; /* Smooth transition for background color change */
         }
-
+/* Adjusted styles for the logo */
+ .logo-image {
+            height: 50px; /* Smaller size */
+            width: auto; /* Maintain aspect ratio */
+            position: absolute; /* Position it over other elements */
+            top: 0; /* Adjusted to the top of the container */
+            left: 0; /* Adjusted to the left of the container */
+            z-index: 1000; /* Make sure it's above other items */
+            margin-left: 10px; /* Spacing from the left edge of the container */
+            margin-top: 10px; /* Spacing from the top edge of the container */
+        }
         /* Dark mode */
         body.dark-mode {
             background-color: black; /* Set background to black */
