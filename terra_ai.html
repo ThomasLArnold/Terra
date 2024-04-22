@@ -4,147 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terra | Terra's AI Interaction</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
-    <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1f1f1f; /* Dark cool theme */
-            color: #ffffff; /* Text color */
-            transition: background-color 0.3s ease;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto; /* Center the container */
+    <link rel="stylesheet" href="terra_ai.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+    <script>
+        let audioStream = null;
+        let videoStream = null;
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            document.body.style.backgroundColor = body.classList.contains('dark-mode') ? '#000' : '#fff';
+            document.body.style.color = body.classList.contains('dark-mode') ? '#fff' : '#000';
         }
 
-        /* Navigation Styles */
-        .header {
-            background-color: #333; /* Dark background for navigation */
-            padding: 20px 0; /* Add padding to the top and bottom */
+        function sendCommand(command) {
+            console.log("Command sent:", command);
         }
 
-        .navigation ul {
-            list-style: none; /* Remove default list styles */
-            padding: 0;
-            text-align: center; /* Center align navigation links */
+        function toggleAudio() {
+            if (audioStream) {
+                audioStream.getTracks().forEach(track => track.stop());
+                audioStream = null;
+                document.getElementById('speak-btn').textContent = 'Start Speaking';
+            } else {
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                        audioStream = stream;
+                        document.getElementById('speak-btn').textContent = 'Stop Speaking';
+                    })
+                    .catch(err => {
+                        console.error("Error accessing the microphone:", err);
+                    });
+            }
         }
 
-        .navigation ul li {
-            display: inline-block; /* Display items horizontally */
-            margin-right: 20px; /* Add space between items */
+        function toggleCamera() {
+            const cameraOutput = document.getElementById('camera-output');
+            if (videoStream) {
+                videoStream.getTracks().forEach(track => track.stop());
+                videoStream = null;
+                cameraOutput.innerHTML = '';
+                document.getElementById('camera-btn').textContent = 'Use Vision';
+            } else {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                        videoStream = stream;
+                        const video = document.createElement('video');
+                        video.srcObject = stream;
+                        video.setAttribute('playsinline', '');
+                        video.setAttribute('autoplay', '');
+                        cameraOutput.appendChild(video);
+                        document.getElementById('camera-btn').textContent = 'Disable Vision';
+                    })
+                    .catch(err => {
+                        console.error("Error accessing the camera:", err);
+                    });
+            }
         }
-
-        .navigation ul li a {
-            text-decoration: none; /* Remove underline from links */
-            color: #ffffff; /* Link text color */
-            font-size: 18px; /* Font size */
-            transition: color 0.3s ease; /* Smooth transition for color change */
-        }
-
-        .navigation ul li a:hover {
-            color: #ff6600; /* Change color on hover */
-        }
-
-        /* Terra's AI Section Styles */
-        .gpt-section {
-            text-align: center;
-            margin-top: 100px; /* Adjust margin to center the section */
-        }
-        .gpt-section .command-container {
-            margin-top: 50px; /* Adjust margin to move the text box and button lower */
-        }
-        .gpt-section input[type="text"] {
-            width: 300px;
-        }
-        .gpt-section button {
-            padding: 10px 20px;
-            background-color: #ff6600; /* Orange button color */
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .gpt-section button:hover {
-            background-color: #ff8533; /* Lighter orange on hover */
-        }
-        .gpt-section .response-container {
-            margin-top: 20px;
-        }
-        .gpt-section .response-text {
-            width: 80%;
-            margin: 0 auto;
-            padding: 10px;
-            border: 1px solid #ffffff; /* White border */
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-            resize: none; /* Disable textarea resizing */
-            color: #ffffff; /* Text color */
-        }
-        /* Video Container Styles */
-        .video-container {
-            margin-top: 20px;
-            position: relative;
-            width: 300px; /* Adjust the size as needed */
-            height: 200px; /* Adjust the size as needed */
-            margin: 0 auto; /* Center the container */
-        }
-        .video-container video {
-            width: 100%;
-            height: 100%;
-        }
-        .video-container canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #ff6600; /* Orange border for the camera view */
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <!-- Navigation -->
+<body class="dark-mode">
+    <!-- Dark mode toggle button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Light/Dark Mode</button>
+
+    <!-- Navigation with Hamburger Menu -->
     <header class="header">
-        <div class="container">
-            <h1 class="logo">Terra</h1>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="terra_ai.html">Terra's AI</a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="video_generator.html">Video Generator</a></li>
-                    <li><a href="image_generator.html">Image Generator</a></li>
-                    <li><a href="about_owner.html">About Owner</a></li>
-                    <li><a href="instagram.html">Instagram</a></li> <!-- Updated link to Terra's Instagram -->
-                </ul>
-            </nav>
-        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="WebandApp.html">Web & App Development</a></li>
+                <li><a href="Terra'sAiServices.html">Terra's AI Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="Careerspage.html">Careers Page</a></li>
+                <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
+                <li><a href="./about_owner.html">About Owner</a></li>
+                <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Terra's AI Section -->
+    <!-- Spline Viewer Section -->
+    <section class="spline-container">
+        <spline-viewer url="https://prod.spline.design/NkTs70N1I4tJnwsA/scene.splinecode"></spline-viewer>
+    </section>
+
+    <!-- Terra's AI Interaction Section -->
     <section class="gpt-section">
-        <div class="container">
-            <h2>Terra's AI Interaction</h2>
-            <p>Enter a command to interact with Terra's AI:</p>
-            <div class="command-container">
-                <input type="text" id="command-input" style="width: 300px;">
-                <button onclick="sendCommand(document.getElementById('command-input').value)">Send</button>
+        <h2 class="interaction-title">Terra's AI Interaction</h2>
+    
+        <div class="command-container">
+            <input type="text" id="command-input" class="command-input" placeholder="Enter your command">
+            <div class="button-container">
+                <button id="send-btn" class="send-btn" onclick="sendCommand(document.getElementById('command-input').value)">Send</button>
+                <button id="speak-btn" class="speak-btn" onclick="toggleAudio()">Start Speaking</button>
+                <button id="camera-btn" class="camera-btn" onclick="toggleCamera()">Use Vision</button>
             </div>
-            <div class="response-container">
-                <p>Response:</p>
-                <textarea class="response-text" id="response-text" rows="5" readonly></textarea>
-            </div>
-            <button id="speak-btn" onclick="startSpeaking()">Start Speaking</button>
-            <button id="camera-btn" onclick="toggleCamera()">Use Vision</button>
-            <div class="video-container" id="video-container"></div>
-            <video id="camera-feed" autoplay style="display: none;"></video>
+        </div>
+        <div class="response-container">
+            <p>Response:</p>
+            <textarea class="response-text" id="response-text" rows="5" readonly></textarea>
         </div>
     </section>
 
-    <!-- JavaScript import and script -->
-    <script src="terras_ai_interaction.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Terra. All rights reserved.</p>
+    </footer>
+
+    <div id="camera-output" class="camera-output"></div>
 </body>
 </html>
+
