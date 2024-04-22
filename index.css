@@ -1,0 +1,252 @@
+body {
+font-family : Arial, sans-serif;
+margin : 0;
+padding : 0;
+overflow-x : hidden;
+background-color : white;
+color : black;
+transition : background-color 0.3s ease;
+}
+.logo-image {
+height : 50px;
+width : auto;
+position : absolute;
+top : 0;
+left : 0;
+z-index : 1000;
+margin-left : 10px;
+margin-top : 10px;
+}
+body.dark-mode {
+background-color : black;
+color : white;
+}
+.header {
+text-align : center;
+padding : 20px 0;
+position : relative;
+}
+.navigation-toggle {
+display : none;
+}
+.navigation {
+display : none;
+position : absolute;
+top : 100%;
+left : 50%;
+transform : translateX(-50%);
+background-color : rgb(18, 174, 192, 0.9);
+padding : 20px;
+border-radius : 5px;
+box-shadow : 0 0 10px rgb(0, 0, 0, 0.1);
+z-index : 999;
+}
+.navigation.active {
+display : block;
+}
+.navigation ul {
+list-style : none;
+padding : 0;
+}
+.navigation ul li {
+margin-bottom : 10px;
+}
+.navigation ul li a {
+text-decoration : none;
+color : black;
+font-size : 16px;
+display : block;
+}
+.navigation ul li a:hover {
+color : #ff1dce;
+}
+#about {
+background-color : white;
+color : black;
+padding : 150px 0;
+text-align : center;
+position : relative;
+overflow : hidden;
+}
+#video-background {
+position : absolute;
+top : 0;
+left : 0;
+width : 100%;
+height : 100%;
+z-index : -1;
+}
+.hero {
+text-align : center;
+padding : 50px 0;
+}
+.services {
+display : flex;
+justify-content : center;
+align-items : center;
+flex-direction : column;
+padding : 80px 0;
+background-color : white;
+color : black;
+}
+.services h2 {
+font-family : 'Arial Black', sans-serif;
+font-size : 36px;
+margin-bottom : 30px;
+text-align : center;
+}
+.service-item {
+flex : 1;
+padding : 20px;
+background-color : white;
+border-radius : 10px;
+box-shadow : 0 0 20px rgb(0, 0, 0, 0.2);
+text-align : center;
+margin : 20px 0;
+max-width : 90%;
+transition : background-color 0.3s ease;
+cursor : pointer;
+color : black;
+}
+.service-item:hover {
+background-color : #fc2e59;
+color : white;
+}
+.signup-button, .signin-button, .careers-button {
+background-color : #fc2e59;
+color : white;
+padding : 10px 20px;
+font-size : 16px;
+border : none;
+border-radius : 5px;
+cursor : pointer;
+margin-top : 20px;
+transition : background-color 0.3s ease;
+}
+.signup-button:hover, .signin-button:hover, .careers-button:hover {
+background-color : #ff1dce;
+}
+.container {
+display : flex;
+justify-content : center;
+flex-direction : column;
+align-items : center;
+}
+.service-item ul {
+list-style : none;
+padding : 0;
+}
+.navigation-toggle {
+font-size : 500px;
+}
+.message {
+text-align : center;
+margin-top : 20px;
+background-color : white;
+padding : 20px;
+border-radius : 10px;
+box-shadow : 0 0 20px rgb(0, 0, 0, 0.1);
+transition : background-color 0.3s ease;
+}
+.message p {
+font-size : 18px;
+}
+.message a {
+color : #fc2e59;
+text-decoration : none;
+transition : color 0.3s ease;
+}
+.message a:hover {
+color : #ff1dce;
+}
+.spline-input {
+padding : 80px 0;
+background-color : white;
+color : black;
+text-align : center;
+}
+#personal-assistant {
+background-color : white;
+color : black;
+padding : 80px 0;
+text-align : center;
+}
+#personal-assistant .message-box {
+margin-top : 50px;
+text-align : center;
+}
+#personal-assistant .message-box input[type="text"] {
+width : 80%;
+padding : 15px;
+margin-bottom : 20px;
+border-radius : 10px;
+border : #ccc solid 1px;
+font-size : 18px;
+}
+#personal-assistant .response-box {
+background-color : #f0f0f0;
+padding : 20px;
+margin-bottom : 20px;
+border-radius : 10px;
+border : #ccc solid 1px;
+font-size : 18px;
+}
+#personal-assistant .buttons {
+display : flex;
+justify-content : center;
+}
+#personal-assistant .buttons button {
+background-color : #fc2e59;
+color : white;
+padding : 15px 30px;
+font-size : 16px;
+border : none;
+border-radius : 5px;
+cursor : pointer;
+margin : 0 10px;
+transition : background-color 0.3s ease;
+}
+#personal-assistant .buttons button:hover {
+background-color : #ff1dce;
+}
+.contact {
+background-color : white;
+color : black;
+padding : 80px 0;
+text-align : center;
+}
+.contact p {
+font-size : 18px;
+}
+.contact a {
+color : #000;
+text-decoration : underline;
+}
+.contact a:hover {
+color : #ff1dce;
+}
+.footer {
+background-color : #0f4c54;
+color : white;
+text-align : center;
+padding : 20px 0;
+}
+.footer p {
+font-size : 16px;
+}
+.dark-mode-toggle {
+position : fixed;
+top : 20px;
+right : 20px;
+background-color : #fc2e59;
+color : white;
+padding : 10px 20px;
+border : none;
+border-radius : 5px;
+cursor : pointer;
+z-index : 9999;
+transition : background-color 0.3s ease;
+}
+.dark-mode-toggle:hover {
+background-color : #ff1dce;
+}
