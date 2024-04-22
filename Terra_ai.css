@@ -105,10 +105,11 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .interaction-title {
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .command-container {
