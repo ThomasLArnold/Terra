@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"
-><html↩<head>↩
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terra | Innovative Website Creation & AI Services</title>
-    <link rel="stylesheet" href="index.css"> <!-- Link to your CSS file for styling -->
-    
+    <link rel="stylesheet" href="index.css"> <!-- Ensure this path is correct -->
 </head>
 <body class="dark-mode">
     <!-- Dark mode toggle button -->
@@ -15,18 +14,17 @@
     <header class="header">
         <div class="container">
             <input type="checkbox" class="navigation-toggle" id="nav-toggle">
-            <label for="nav-toggle">&#9776;</label> <!-- Hamburger menu icon -->
+            <label for="nav-toggle">&#9776;</label>
             <h1 class="logo">Terra</h1>
             <nav class="navigation">
                 <ul>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="WebandApp.html">Web & App Development</a></li>
-                    <li><a href="Terra'sAiServices.html">Terra's AI Services</a></li> <!-- Update link to Terra's AI Services.html -->
+                    <li><a href="Terra'sAiServices.html">Terra's AI Services</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="Careerspage.html">Careers Page</a></li> <!-- Added Careers Page -->
+                    <li><a href="Careerspage.html">Careers Page</a></li>
                     <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
                     <li><a href="./about_owner.html">About Owner</a></li>
-                    <li><a href="./privacypolicy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
+                    <li><a href="./privacypolicy.html">Privacy Policy</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,58 +38,36 @@
         </div>
     </section>
 
-    <!-- About Section with Video Background -->
+    <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>What is Terra?</h2>
-            <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital presence. Our mission is to empower businesses by furnishing our developer's expertise needed to evolve in the digital realm. We provide projects to developers, enabling them to craft the code for your website and app, while also offering opportunities for those seeking new career paths in the tech industry.</p>
+            <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital presence.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
         </div>
-        <!-- Embed YouTube Video -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2lvEQtBYCdI" frameborder="0" allowfullscreen></iframe>
     </section>
     
-  
-
     <!-- Website Development and Design Section -->
     <section id="website-design" class="services">
         <div class="container">
             <h2>Website Development and Design</h2>
-            <!-- Standard Package -->
-            <div class="service-item" onclick="redirectToServices()">
-                <h3>Standard Package</h3>
-                <p>A business startup site with e-commerce functionality. Includes:</p>
-                <ul>
-                    <li>Functional website with 30-day delivery and an extra $400 for 7-day delivery</li>
-                    <li>5 pages, 3 revisions</li>
-                    <li>E-commerce functionality (up to 3 products)</li>
-                    <li>Payment processing, opt-in form for email capability</li>
-                    <li>Speed optimization, hosting setup, social media icons</li>
-                </ul>
-                <p><strong>Price:</strong> $1800</p>
+            <div class="service-item">
+                <h3>Essential Package</h3>
+                <p>A business startup site with e-commerce functionality. Includes functional website with 30-day delivery, 5 pages, 3 revisions, e-commerce functionality for up to 3 products, payment processing, email opt-in form, speed optimization, hosting setup, and social media icons.</p>
+                <p><strong>Price:</strong> $1,800</p>
             </div>
-
-            <!-- Premium Package -->
-            <div class="service-item" onclick="redirectToServices()">
+            <div class="service-item">
                 <h3>Premium Package</h3>
-                <p>A premium business site for upscaling your business. Includes:</p>
-                <ul>
-                    <li>Functional website with 45-day delivery</li>
-                    <li>10 pages, unlimited revisions</li>
-                    <li>E-commerce functionality (up to 20 products)</li>
-                    <li>Payment processing, opt-in form for email functionality</li>
-                    <li>Speed optimization, hosting setup, social media icons</li>
-                </ul>
+                <p>A premium business site for upscaling your business. Includes functional website with 45-day delivery, 10 pages, unlimited revisions, e-commerce functionality for up to 20 products, payment processing, email opt-in form, speed optimization, hosting setup, and social media icons.</p>
                 <p><strong>Price:</strong> $2,500</p>
-                <p>Expedited Delivery (within 10 days): Additional $650</p>
             </div>
         </div>
     </section>
 
-    <!-- Spline Input Section -->
+    <!-- First Spline Viewer Section -->
     <section class="spline-input">
         <div class="container">
-            <h2>Utilize our 3D designs and Animations</h2>
-            <!-- Include Spline Viewer -->
+            <h2>Utilize our 3D Designs and Animations</h2>
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/t1z08vV3u6tk7Oug/scene.splinecode"></spline-viewer>
         </div>
@@ -101,40 +77,23 @@
     <section id="app-development" class="services">
         <div class="container">
             <h2>App Development</h2>
-            <!-- App Development Packages -->
-            <div class="service-item" onclick="redirectToAppDevelopment()">
-                <h3>Basic Package</h3>
-                <p>Get started with your mobile app development journey with our Basic Package, ideal for startups and small businesses.</p>
-                <ul>
-                    <li>Android or iOS platform</li>
-                    <li>2-3 core features</li>
-                    <li>Simple UI/UX design</li>
-                    <li>Testing and bug fixes</li>
-                    <li>Delivery within 4-6 weeks</li>
-                </ul>
+            <div class="service-item">
+                <h3>Essential Package</h3>
+                <p>Get started with your mobile app development journey with our Basic Package, ideal for startups and small businesses. Includes Android or iOS platform, 2-3 core features, simple UI/UX design, testing, and bug fixes.</p>
                 <p><strong>Price:</strong> $3000</p>
             </div>
-            <div class="service-item" onclick="redirectToAppDevelopment()">
+            <div class="service-item">
                 <h3>Advanced Package</h3>
-                <p>Elevate your app with our Advanced Package, suitable for businesses looking to integrate complex functionalities and scalable solutions.</p>
-                <ul>
-                    <li>Android and iOS platforms</li>
-                    <li>5-7 core features</li>
-                    <li>Custom UI/UX design</li>
-                    <li>API integration</li>
-                    <li>Testing, deployment, and maintenance</li>
-                    <li>Delivery within 8-12 weeks</li>
-                </ul>
+                <p>Elevate your app with our Advanced Package, suitable for businesses looking to integrate complex functionalities and scalable solutions. Includes Android and iOS platforms, 5-7 core features, custom UI/UX design, API integration, testing, deployment, and maintenance.</p>
                 <p><strong>Price:</strong> $6000</p>
             </div>
         </div>
     </section>
 
-    <!-- Utilize our 3D designs and Animations Section -->
+    <!-- Second Spline Viewer Section -->
     <section class="spline-input">
         <div class="container">
-            <h2>Utilize our 3D designs and Animations</h2>
-            <!-- Include Spline Viewer -->
+            <h2>Interactive 3D Experiences</h2>
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/NQajQ4jWUX8ksHzR/scene.splinecode"></spline-viewer>
         </div>
@@ -144,32 +103,27 @@
     <section id="ai-services" class="services">
         <div class="container">
             <h2>AI Services</h2>
-            <!-- Personal Assistant -->
-            <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" rel="noopener noreferrer" class="service-item">
+            <div class="service-item">
                 <h3>Personal Assistant</h3>
                 <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information or simply learning a new language, our AI-powered assistant is here to help.</p>
                 <p><strong>Price:</strong> $8.99</p>
-            </a>
-            <!-- AI Art Generation -->
-            <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" rel="noopener noreferrer" class="service-item">
+            </div>
+            <div class="service-item">
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
                 <p><strong>Price:</strong> $14.99</p>
-            </a>
+            </div
         </div>
     </section>
 
-<!-- Sleek and innovative Ai Section -->
-<section id="sleek-ai" class="spline-input">
-    <div class="container">
-        <h2>Sleek and innovative AI</h2>
-        <!-- Include Spline Viewer -->
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/NkTs70N1I4tJnwsA/scene.splinecode"></spline-viewer>
-    </div>
-</section>
-
-    <!-- Personal Assistant Section -->
+    <!-- Third Spline Viewer Section -->
+    <section class="spline-input">
+        <div class="container">
+            <h2>Sleek and Innovative AI</h2>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/NkTs70N1I4tJnwsA/scene.splinecode"></spline-viewer>
+        </div>
+    </section>
     <section id="personal-assistant">
         <div class="container">
             <h2>Personal Assistant</h2>
@@ -183,12 +137,13 @@
             </div>
         </div>
     </section>
-
+   
+   
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <p>Ready to elevate your digital presence? Click on any service or click the three lines at the top of the page! Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> with any questions!</p>
+            <p>Ready to elevate your digital presence? Reach out to us at <a href="mailto:info@terranovaai.net">info@terranovaai.net</a> with any questions!</p>
         </div>
     </section>
 
@@ -219,14 +174,9 @@
             const body = document.body;
             body.classList.toggle('dark-mode');
             const buttonText = document.querySelector('.dark-mode-toggle');
-            if (body.classList.contains('dark-mode')) {
-                buttonText.textContent = 'Light Mode';
-            } else {
-                buttonText.textContent = 'Dark Mode';
-            }
+            buttonText.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
         }
     </script>
-
     <!-- JavaScript to handle personal assistant -->
     <script>
         function sendRequest() {
@@ -235,7 +185,7 @@
             const message = messageInput.value.trim();
             if (message !== '') {
                 // Simulate server response
-                const response = 'Sorry, I am just a demo. But you can visit our <a href="#ai-services">AI Services</a> section to explore more!';
+                const response = 'Sorry, I am just a demo. But you can visit our <a href="Terra\'sAiServices.html">AI Services</a> section to explore more!';
                 responseBox.innerHTML = response;
                 messageInput.value = '';
             }
@@ -245,20 +195,5 @@
             window.location.href = 'https://buy.stripe.com/bIY2aqgsUgPa45a8wz';
         }
     </script>
-
-    <!-- JavaScript to redirect to services -->
-    <script>
-        function redirectToServices() {
-            window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
-        }
-    </script>
-
-    <!-- JavaScript to redirect to app development -->
-    <script>
-        function redirectToAppDevelopment() {
-            window.location.href = 'https://buy.stripe.com/bIY2aqgsUgPa45a8wz';
-        }
-    </script>
 </body>
 </html>
-
