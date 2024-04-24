@@ -1,252 +1,171 @@
+/* Basic Reset */
 body {
-font-family : Arial, sans-serif;
-margin : 0;
-padding : 0;
-overflow-x : hidden;
-background-color : white;
-color : black;
-transition : background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: black; /* Default dark mode */
+    color: white; /* Ensures text is visible on dark background */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.logo-image {
-height : 50px;
-width : auto;
-position : absolute;
-top : 0;
-left : 0;
-z-index : 1000;
-margin-left : 10px;
-margin-top : 10px;
-}
-body.dark-mode {
-background-color : black;
-color : white;
-}
+
+/* Header and Navigation Styles */
 .header {
-text-align : center;
-padding : 20px 0;
-position : relative;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
 }
+
 .navigation-toggle {
-display : none;
+    display: none; /* Hide the toggle when not in use */
 }
+
 .navigation {
-display : none;
-position : absolute;
-top : 100%;
-left : 50%;
-transform : translateX(-50%);
-background-color : rgb(18, 174, 192, 0.9);
-padding : 20px;
-border-radius : 5px;
-box-shadow : 0 0 10px rgb(0, 0, 0, 0.1);
-z-index : 999;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(18, 174, 192, 0.9); /* Light teal background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
+
 .navigation.active {
-display : block;
+    display: block;
 }
+
 .navigation ul {
-list-style : none;
-padding : 0;
+    list-style: none; /* Removes bullet points */
+    padding: 0;
 }
+
 .navigation ul li {
-margin-bottom : 10px;
+    margin-bottom: 10px;
 }
+
 .navigation ul li a {
-text-decoration : none;
-color : black;
-font-size : 16px;
-display : block;
+    text-decoration: none;
+    color: white; /* Visible on dark mode */
+    font-size: 16px;
+    display: block;
+    transition: color 0.3s ease;
 }
+
 .navigation ul li a:hover {
-color : #ff1dce;
+    color: #ff1dce; /* Highlight color */
 }
-#about {
-background-color : white;
-color : black;
-padding : 150px 0;
-text-align : center;
-position : relative;
-overflow : hidden;
+
+/* Section Styles */
+section {
+    padding: 50px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
-#video-background {
-position : absolute;
-top : 0;
-left : 0;
-width : 100%;
-height : 100%;
-z-index : -1;
+
+.hero, #about, .services, .spline-input, #personal-assistant, #contact {
+    background-color: black; /* Ensure all sections have dark mode by default */
+    color: white;
 }
-.hero {
-text-align : center;
-padding : 50px 0;
-}
-.services {
-display : flex;
-justify-content : center;
-align-items : center;
-flex-direction : column;
-padding : 80px 0;
-background-color : white;
-color : black;
-}
-.services h2 {
-font-family : 'Arial Black', sans-serif;
-font-size : 36px;
-margin-bottom : 30px;
-text-align : center;
-}
-.service-item {
-flex : 1;
-padding : 20px;
-background-color : white;
-border-radius : 10px;
-box-shadow : 0 0 20px rgb(0, 0, 0, 0.2);
-text-align : center;
-margin : 20px 0;
-max-width : 90%;
-transition : background-color 0.3s ease;
-cursor : pointer;
-color : black;
-}
-.service-item:hover {
-background-color : #fc2e59;
-color : white;
-}
-.signup-button, .signin-button, .careers-button {
-background-color : #fc2e59;
-color : white;
-padding : 10px 20px;
-font-size : 16px;
-border : none;
-border-radius : 5px;
-cursor : pointer;
-margin-top : 20px;
-transition : background-color 0.3s ease;
-}
-.signup-button:hover, .signin-button:hover, .careers-button:hover {
-background-color : #ff1dce;
-}
-.container {
-display : flex;
-justify-content : center;
-flex-direction : column;
-align-items : center;
-}
-.service-item ul {
-list-style : none;
-padding : 0;
-}
-.navigation-toggle {
-font-size : 500px;
-}
-.message {
-text-align : center;
-margin-top : 20px;
-background-color : white;
-padding : 20px;
-border-radius : 10px;
-box-shadow : 0 0 20px rgb(0, 0, 0, 0.1);
-transition : background-color 0.3s ease;
-}
-.message p {
-font-size : 18px;
-}
-.message a {
-color : #fc2e59;
-text-decoration : none;
-transition : color 0.3s ease;
-}
-.message a:hover {
-color : #ff1dce;
-}
-.spline-input {
-padding : 80px 0;
-background-color : white;
-color : black;
-text-align : center;
-}
-#personal-assistant {
-background-color : white;
-color : black;
-padding : 80px 0;
-text-align : center;
-}
-#personal-assistant .message-box {
-margin-top : 50px;
-text-align : center;
-}
-#personal-assistant .message-box input[type="text"] {
-width : 80%;
-padding : 15px;
-margin-bottom : 20px;
-border-radius : 10px;
-border : #ccc solid 1px;
-font-size : 18px;
-}
-#personal-assistant .response-box {
-background-color : #f0f0f0;
-padding : 20px;
-margin-bottom : 20px;
-border-radius : 10px;
-border : #ccc solid 1px;
-font-size : 18px;
-}
-#personal-assistant .buttons {
-display : flex;
-justify-content : center;
-}
-#personal-assistant .buttons button {
-background-color : #fc2e59;
-color : white;
-padding : 15px 30px;
-font-size : 16px;
-border : none;
-border-radius : 5px;
-cursor : pointer;
-margin : 0 10px;
-transition : background-color 0.3s ease;
-}
-#personal-assistant .buttons button:hover {
-background-color : #ff1dce;
-}
-.contact {
-background-color : white;
-color : black;
-padding : 80px 0;
-text-align : center;
-}
-.contact p {
-font-size : 18px;
-}
-.contact a {
-color : #000;
-text-decoration : underline;
-}
-.contact a:hover {
-color : #ff1dce;
-}
-.footer {
-background-color : #0f4c54;
-color : white;
-text-align : center;
-padding : 20px 0;
-}
-.footer p {
-font-size : 16px;
-}
+
+/* Toggle Button for Dark Mode */
 .dark-mode-toggle {
-position : fixed;
-top : 20px;
-right : 20px;
-background-color : #fc2e59;
-color : white;
-padding : 10px 20px;
-border : none;
-border-radius : 5px;
-cursor : pointer;
-z-index : 9999;
-transition : background-color 0.3s ease;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fc2e59; /* Pinkish-red background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background-color 0.3s ease;
 }
+
 .dark-mode-toggle:hover {
-background-color : #ff1dce;
+    background-color: #ff1dce; /* Light pink for hover state */
+}
+
+/* Service Item Styling */
+.service-item {
+    padding: 20px;
+    background-color: #333; /* Dark background for items */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 90%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-item:hover {
+    background-color: #fc2e59; /* Lighter background on hover */
+    color: white;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #0f4c54; /* Dark teal background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Dynamic Color Changes for Toggle */
+body:not(.dark-mode) {
+    background-color: white;
+    color: black;
+}
+
+body:not(.dark-mode) .navigation ul li a,
+body:not(.dark-mode) .dark-mode-toggle {
+    color: black;
+}
+
+body:not(.dark-mode) .service-item,
+body:not(.dark-mode) #about,
+body:not(.dark-mode) .hero,
+body:not(.dark-mode) .services,
+body:not(.dark-mode) .spline-input,
+body:not(.dark-mode) #personal-assistant,
+body:not(.dark-mode) #contact {
+    background-color: white; /* Light background for light mode */
+    color: black;
+}
+
+/* Personal Assistant and AI Art Generation Styles */
+.service-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Inherits color from parent for better control */
+}
+
+.service-item a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Message Box Styling */
+#personal-assistant .message-box input[type="text"],
+#personal-assistant .buttons button {
+    background-color: #6a0dad; /* Purple background for interaction elements */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#personal-assistant .message-box input[type="text"] {
+    width: 90%; /* Making the text box slightly bigger */
+    margin-bottom: 20px;
+}
+
+#personal-assistant .buttons button:hover {
+    background-color: #9a4dff; /* Lighter purple on hover */
 }
