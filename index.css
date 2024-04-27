@@ -15,6 +15,12 @@ body {
     padding: 20px 0;
     position: relative;
 }
+.logo {
+    height: 50px; /* Adjust size as necessary */
+    position: absolute;
+    left: 20px; /* Adjust spacing as necessary */
+    top: 10px; /* Adjust for vertical alignment */
+}
 
 .navigation-toggle {
     display: none; /* Hide the toggle when not in use */
