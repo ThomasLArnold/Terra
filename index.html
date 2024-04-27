@@ -10,12 +10,21 @@
     <!-- Dark mode toggle button -->
     <button class="dark-mode-toggle" onclick="toggleDarkMode()">Light Mode</button>
 
+    <!-- Popup for AI Vision Feature -->
+    <div id="ai-vision-popup" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Would you like to experience our new AI Vision feature?</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ezme6Tb6qks?si=RL8oE_feJqlY7IP5" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <header class="header">
         <div class="container">
             <input type="checkbox" class="navigation-toggle" id="nav-toggle">
             <label for="nav-toggle">&#9776;</label>
-            <h1 class="logo">Terra</h1>
+            <img src="https://github.com/ThomasLArnold/Terranovaai.net/blob/main/Logo.png?raw=true" alt="Terra Logo" class="logo">
             <nav class="navigation">
                 <ul>
                     <li><a href="WebandApp.html">Web & App Development</a></li>
@@ -43,7 +52,7 @@
         <div class="container">
             <h2>What is Terra?</h2>
             <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital presence.</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=ezme6Tb6qks" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QB9Q4GrXXrw?si=anZ6s5RAXRHfhlcS" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
     
@@ -112,7 +121,7 @@
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
                 <p><strong>Price:</strong> $14.99</p>
-            </div
+            </div>
         </div>
     </section>
 
@@ -124,6 +133,8 @@
             <spline-viewer url="https://prod.spline.design/NkTs70N1I4tJnwsA/scene.splinecode"></spline-viewer>
         </div>
     </section>
+
+    <!-- Personal Assistant Section -->
     <section id="personal-assistant">
         <div class="container">
             <h2>Personal Assistant</h2>
@@ -137,7 +148,6 @@
             </div>
         </div>
     </section>
-   
    
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -154,7 +164,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript to toggle navigation menu -->
+    <!-- JavaScript for Navigation Menu -->
     <script>
         const navToggle = document.querySelector('#nav-toggle');
         const navigation = document.querySelector('.navigation');
@@ -168,7 +178,7 @@
         });
     </script>
 
-    <!-- JavaScript to toggle dark mode -->
+    <!-- JavaScript for Dark Mode Toggle -->
     <script>
         function toggleDarkMode() {
             const body = document.body;
@@ -177,14 +187,14 @@
             buttonText.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
         }
     </script>
-    <!-- JavaScript to handle personal assistant -->
+
+    <!-- JavaScript for Personal Assistant -->
     <script>
         function sendRequest() {
             const messageInput = document.querySelector('.message-box input[type="text"]');
             const responseBox = document.querySelector('.response-box');
             const message = messageInput.value.trim();
             if (message !== '') {
-                // Simulate server response
                 const response = 'Sorry, I am just a demo. But you can visit our <a href="Terra\'sAiServices.html">AI Services</a> section to explore more!';
                 responseBox.innerHTML = response;
                 messageInput.value = '';
@@ -193,6 +203,24 @@
 
         function redirectToStripe() {
             window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
+        }
+    </script>
+
+    <!-- JavaScript for AI Vision Feature Popup -->
+    <script>
+        window.onload = function() {
+            const modal = document.getElementById('ai-vision-popup');
+            const closeButton = document.querySelector('.close');
+
+            closeButton.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
         }
     </script>
 </body>
