@@ -175,3 +175,209 @@ body:not(.dark-mode) #contact {
 #personal-assistant .buttons button:hover {
     background-color: #9a4dff; /* Lighter purple on hover */
 }
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        height: 30px; /* Smaller logo on mobile */
+        position: absolute;
+        left: 10px; /* Less padding on smaller screens */
+        top: 5px;
+    }
+
+    .navigation-toggle {
+        display: block; /* Show toggle on mobile */
+        position: absolute;
+        right: 10px; /* Align toggle to the right on mobile */
+        top: 10px;
+    }
+
+    .navigation {
+        display: none; /* Initially hide navigation on mobile */
+        position: fixed; /* Fixed position on mobile */
+        top: 50px; /* Below the header */
+        left: 0;
+        width: 100%; /* Full width */
+        background-color: rgba(18, 174, 192, 0.9);
+        z-index: 1000;
+    }
+
+    .navigation ul {
+        display: block; /* Stack links vertically on mobile */
+    }
+
+    .navigation ul li {
+        text-align: center; /* Center align links */
+        padding: 10px; /* Larger touch targets */
+    }
+
+    .hero, #about, .services, .spline-input, #personal-assistant, #contact {
+        padding: 20px; /* Less padding on mobile */
+    }
+
+    .service-item {
+        width: 100%; /* Full width service items on mobile */
+    }
+
+    /* Adjustments for smaller sections and text sizing on smaller screens */
+    h2, p {
+        padding: 0 10px; /* Padding for text on small screens */
+    }
+}
+
+/* General Styles (include these if they are not already part of your existing CSS) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.navigation-toggle {
+    display: none;
+}
+
+.navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(18, 174, 192, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.navigation.active {
+    display: block;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    margin-bottom: 10px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #ff1dce;
+}
+
+.hero, #about, .services, .spline-input, #personal-assistant, #contact {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fc2e59;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #ff1dce;
+}
+
+.service-item {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 90%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-item:hover {
+    background-color: #fc2e59;
+    color: white;
+}
+
+.footer {
+    background-color: #0f4c54;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+body:not(.dark-mode) {
+    background-color: white;
+    color: black;
+}
+
+body:not(.dark-mode) .navigation ul li a,
+body:not(.dark-mode) .dark-mode-toggle {
+    color: black;
+}
+
+body:not(.dark-mode) .service-item,
+body:not(.dark-mode) #about,
+body:not(.dark-mode) .hero,
+body:not(.-dark-mode) .services,
+body:not(.dark-mode) .spline-input,
+body:not(.dark-mode) #personal-assistant,
+body:not(.dark-mode) #contact {
+    background-color: white;
+    color: black;
+}
+
+.service-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-item a:hover {
+    text-decoration: underline;
+}
+
+#personal-assistant .message-box input[type="text"],
+#personal-assistant .buttons button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#personal-assistant .message-box input[type="text"] {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+#personal-assistant .buttons button:hover {
+    background-color: #9a4dff;
+}
