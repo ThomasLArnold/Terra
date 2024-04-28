@@ -10,15 +10,6 @@
     <!-- Dark mode toggle button -->
     <button class="dark-mode-toggle" onclick="toggleDarkMode()">Light Mode</button>
 
-    <!-- Popup for AI Vision Feature -->
-    <div id="ai-vision-popup" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Would you like to experience our new AI Vision feature?</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ezme6Tb6qks?si=RL8oE_feJqlY7IP5" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <header class="header">
         <div class="container">
@@ -52,7 +43,7 @@
         <div class="container">
             <h2>What is Terra?</h2>
             <p>Terra serves as your gateway to cutting-edge website creation and AI-powered services, prioritizing innovation and personalization to actualize your digital presence.</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/QB9Q4GrXXrw?si=anZ6s5RAXRHfhlcS" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/QB9Q4GrXXrw" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
     
@@ -121,6 +112,7 @@
                 <h3>AI Art Generation</h3>
                 <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
                 <p><strong>Price:</strong> $14.99</p>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ezme6Tb6qks" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -183,7 +175,7 @@
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
-            const buttonText = document.querySelector('.dark-mode-toggle');
+            const buttonText is the text of the button that toggles dark mode.
             buttonText.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
         }
     </script>
@@ -203,24 +195,6 @@
 
         function redirectToStripe() {
             window.location.href = 'https://buy.stripe.com/7sI6qG4Kc42o8lq9AE';
-        }
-    </script>
-
-    <!-- JavaScript for AI Vision Feature Popup -->
-    <script>
-        window.onload = function() {
-            const modal = document.getElementById('ai-vision-popup');
-            const closeButton = document.querySelector('.close');
-
-            closeButton.onclick = function() {
-                modal.style.display = 'none';
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
         }
     </script>
 </body>
