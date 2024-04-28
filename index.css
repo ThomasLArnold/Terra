@@ -15,7 +15,7 @@ body {
     padding: 20px 0;
     position: relative;
 }
-.favicon {
+.logo {
     height: 50px; /* Adjust size as necessary */
     position: absolute;
     left: 20px; /* Adjust spacing as necessary */
