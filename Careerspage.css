@@ -1,0 +1,151 @@
+/* Global Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.section-content {
+    line-height: 2;
+}
+
+.button {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #1E90FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: #0066CC;
+}
+
+/* Navigation styles */
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 40px; /* Adjust size of the logo */
+    height: auto;
+}
+
+.navigation-toggle {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+label[for="nav-toggle"] {
+    cursor: pointer;
+    font-size: 24px;
+    display: block;
+}
+
+.navigation {
+    list-style-type: none;
+    display: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: black;
+}
+
+.navigation.active {
+    display: block;
+}
+
+.navigation li {
+    padding: 10px 0;
+}
+
+.navigation li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    color: #1E90FF;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation-toggle {
+        display: block;
+    }
+    .navigation {
+        display: block;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+    }
+}
+
+.start-learning {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.textbook-box {
+    border: 2px solid #1E90FF;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.youtube-link {
+    color: white;
+    text-decoration: none;
+}
+
+.careers-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
