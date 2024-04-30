@@ -4,136 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Services</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
-    <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #00ff00, #0000ff); /* Updated background gradient */
-            color: #ffffff; /* Text color */
-            transition: background-color 0.3s ease;
-        }
-
-        /* Navigation Styles */
-        .header {
-            text-align: center; /* Center align the navigation */
-            padding: 20px 0; /* Add padding to the top and bottom */
-        }
-
-        .navigation {
-            display: none; /* Hide navigation by default */
-            text-align: center;
-        }
-
-        .navigation.active {
-            display: block; /* Show navigation when active */
-        }
-
-        .navigation ul {
-            list-style: none; /* Remove default list styles */
-            padding: 0;
-        }
-
-        .navigation ul li {
-            display: block; /* Display items vertically */
-            margin-bottom: 10px; /* Add space between items */
-        }
-
-        .navigation ul li a {
-            text-decoration: none; /* Remove underline from links */
-            color: #fff; /* Link text color */
-            font-size: 18px; /* Font size */
-            transition: color 0.3s ease; /* Smooth transition for color change */
-        }
-
-        .navigation ul li a:hover {
-            color: #0d5483; /* Change color on hover */
-        }
-
-        /* Hamburger Icon Styles */
-        .hamburger {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 999;
-            cursor: pointer;
-            color: #fff;
-            font-size: 24px;
-        }
-
-        /* Services Section Styles */
-        .services {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; /* Center items vertically */
-            padding: 80px 0;
-            background-color: black; /* Set the background to black */
-            color: white; /* Text color */
-        }
-
-        .service-item {
-            flex: 1;
-            padding: 20px;
-            background-color: black; /* Set service boxes to black */
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
-            text-align: center;
-            margin: 20px 0; /* Add spacing between service items */
-            max-width: 90%; /* Limit width of service items */
-            transition: background-color 0.3s ease; /* Smooth transition for background color change */
-            cursor: pointer; /* Change cursor to pointer */
-            color: white; /* Ensure text within the boxes is white */
-        }
-
-        .service-item:hover {
-            background-color: #fc2e59; /* Change background color on hover */
-            color: white; /* Ensure text color remains white on hover */
-        }
-
-        /* Button Styles */
-        .button {
-            background-color: #fc2e59; /* Consistent button background color */
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            text-decoration: none; /* Remove underline from link */
-            display: inline-block; /* Display buttons inline */
-            margin-right: 10px; /* Add space between buttons */
-        }
-
-        .button:hover {
-            background-color: #ff1dce; /* Change background color on hover */
-        }
-
-        /* Button Container Styles */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap; /* Allow wrapping for multiple buttons */
-        }
-
-        /* Center the Signup Button */
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center; /* Center items horizontally */
-        }
-    </style>
+    <link rel="stylesheet" href="Terra'sAiServices.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>
     <!-- Navigation -->
     <header class="header">
         <div class="container">
-            <span class="hamburger" onclick="toggleNav()">&#9776;</span> <!-- Hamburger menu icon -->
+            <span class="hamburger" onclick="toggleNav()">&#9776;</span>
             <h1 class="logo">Terra</h1>
             <nav class="navigation">
                 <ul>
@@ -147,38 +24,30 @@
         </div>
     </header>
     
-    <!-- Terra's AI Services Section -->
+    <!-- AI Services Section -->
     <section class="services">
         <div class="container">
             <h2>AI Services</h2>
-            <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" rel="noopener noreferrer" class="service-item">
+            <div class="service-item">
                 <h3>AI Art Generation</h3>
-                <p>Step into a realm where innovation meets imagination with Terra's AI Art Generation service. Unleash the power of artificial intelligence to create captivating visuals that leave a lasting impression.</p>
+                <p>Unleash the power of artificial intelligence to create captivating visuals.</p>
                 <p><strong>Price:</strong> $14.99</p>
-            </a>
-            <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" rel="noopener noreferrer" class="service-item">
+                <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" class="button">AI Art Gen</a>
+            </div>
+            <div class="service-item">
                 <h3>Personal Assistant</h3>
-                <p>Get personalized assistance with Terra's Personal Assistant service. From managing your schedule to providing real-time information, our AI-powered assistant is here to help.</p>
+                <p>Get personalized assistance for managing your schedule, providing real-time information, or learning a new language.</p>
                 <p><strong>Price:</strong> $8.99</p>
-            </a>
+                <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" class="button">Personal Assistant</a>
+            </div>
+            <a href="login.html" class="button">Login</a> <!-- Login button -->
         </div>
     </section>
-    
-    <!-- Button Container for Stripe and Login -->
-    <div class="container button-container">
-        <a href="https://buy.stripe.com/7sI6qG4Kc42o8lq9AE" target="_blank" rel="noopener noreferrer" class="button">
-            Personal Assistant
-        </a>
-        <a href="https://buy.stripe.com/bIY2aqgsUgPa45a8wz" target="_blank" rel="noopener noreferrer" class="button">
-            AI Art Gen
-        </a>
-        <a href="login.html" class="button">Login</a> <!-- Login button -->
-    </div>
 
     <script>
         function toggleNav() {
             var navigation = document.querySelector('.navigation');
-            navigation.classList.toggle('active'); // Toggle the active class on click
+            navigation.classList.toggle('active');
         }
     </script>
 </body>
