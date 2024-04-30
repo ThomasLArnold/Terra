@@ -3,221 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terra | Innovative Website Creation & AI Services</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
-    <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #00ff00, #0000ff); /* Updated background gradient */
-            color: #ffffff; /* Text color */
-            transition: background-color 0.3s ease;
-        }
-
-        /* Navigation Styles */
-        .header {
-            text-align: center; /* Center align the navigation */
-            padding: 20px 0; /* Add padding to the top and bottom */
-        }
-
-        .navigation {
-            display: none; /* Hide navigation by default */
-            text-align: center;
-        }
-
-        .navigation.active {
-            display: block; /* Show navigation when active */
-        }
-
-        .navigation ul {
-            list-style: none; /* Remove default list styles */
-            padding: 0;
-        }
-
-        .navigation ul li {
-            display: block; /* Display items vertically */
-            margin-bottom: 10px; /* Add space between items */
-        }
-
-        .navigation ul li a {
-            text-decoration: none; /* Remove underline from links */
-            color: #fff; /* Link text color */
-            font-size: 18px; /* Font size */
-            transition: color 0.3s ease; /* Smooth transition for color change */
-        }
-
-        .navigation ul li a:hover {
-            color: #0d5483; /* Change color on hover */
-        }
-
-        /* Hamburger Icon Styles */
-        .hamburger {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 999;
-            cursor: pointer;
-            color: #fff;
-            font-size: 24px;
-        }
-
-        /* Services Section Styles */
-        .services {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; /* Center items vertically */
-            padding: 80px 0;
-            background-color: black; /* Set the background to black */
-            color: white; /* Text color */
-        }
-
-        .service-item {
-            flex: 1;
-            padding: 20px;
-            background-color: black; /* Set service boxes to black */
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like effect */
-            text-align: center;
-            margin: 20px 0; /* Add spacing between service items */
-            max-width: 90%; /* Limit width of service items */
-            transition: background-color 0.3s ease; /* Smooth transition for background color change */
-            cursor: pointer; /* Change cursor to pointer */
-            color: white; /* Ensure text within the boxes is white */
-        }
-
-        .service-item:hover {
-            background-color: #fc2e59; /* Change background color on hover */
-            color: white; /* Ensure text color remains white on hover */
-        }
-
-        /* Button Styles */
-        .signup-button {
-            background-color: #fc2e59;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            text-decoration: none; /* Remove underline from link */
-            display: block;
-            width: fit-content;
-            margin: auto;
-        }
-
-        .signup-button:hover {
-            background-color: #ff1dce; /* Change background color on hover */
-        }
-
-        /* Center the Signup Button */
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center; /* Center items horizontally */
-        }
-    </style>
+    <title>Embark on Your Digital Journey | Presenting Your Amazing Business Online</title>
+    <link rel="stylesheet" href="WebandApp.css"> <!-- Ensure the CSS file path is correct -->
 </head>
-<body>
+<body class="dark-mode">
+    <!-- Dark mode toggle button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Light Mode</button>
+
     <!-- Navigation -->
     <header class="header">
         <div class="container">
-            <span class="hamburger" onclick="toggleNav()">&#9776;</span> <!-- Hamburger menu icon -->
+            <span class="hamburger" onclick="toggleNav()">&#9776;</span>
             <h1 class="logo">Terra</h1>
             <nav class="navigation">
                 <ul>
-                    <li><a href="./index.html">Home</a></li> <!-- Changed to relative path -->
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="Terra'sAiServices.html">AI Services</a></li>
-                    <li><a href="./about_owner.html">About Owner</a></li> <!-- Changed to relative path -->
+                    <li><a href="./about_owner.html">About Owner</a></li>
                     <li><a href="./instagram.html">Instagram</a></li>
-                    <li><a href="./privacy policy.html">Privacy Policy</a></li> <!-- Changed to relative path -->
-                    <li><a href="./Careerspage.html">Careers</a></li> <!-- Added Careers page -->
+                    <li><a href="./privacy_policy.html">Privacy Policy</a></li>
+                    <li><a href="./Careerspage.html">Careers</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
-    <!-- Website Development Section -->
+    <!-- Website and App Development Sections -->
     <section class="services">
         <div class="container">
             <h2>Website Development</h2>
-            <div class="service-item" onclick="redirectToBottom()">
+            <div class="service-item">
                 <h3>Essential Package</h3>
-                <p>A business startup site with e-commerce functionality. Includes:</p>
-                <p>Functional website with 30-day delivery and an extra $400 for 7-day delivery</p>
-                <p>10 pages, 5 revisions</p>
-                <p>E-commerce functionality (up to 10 products/services)</p>
-                <p>Payment processing, opt-in form for email capability</p>
-                <p>Speed optimization, hosting setup, social media icons</p>
-                <p>Price: $1800</p>
+                <p>A business startup site with e-commerce functionality. Includes 30-day delivery, 10 pages, 5 revisions, e-commerce functionality for up to 10 products, payment processing, email opt-in form, speed optimization, hosting setup, and social media icons.</p>
+                <p>Price: $1,800</p>
             </div>
-            <div class="service-item" onclick="redirectToBottom()">
+            <div class="service-item">
                 <h3>Premium Package</h3>
-                <p>A premium business site for upscaling your business. Includes:</p>
-                <p>Functional website with 45-day delivery</p>
-                <p>20 pages, unlimited revisions</p>
-                <p>E-commerce functionality (up to 20 products)</p>
-                <p>Payment processing, opt-in form for email functionality</p>
-                <p>Speed optimization, hosting setup, social media icons</p>
+                <p>A premium business site for upscaling your business. Includes 45-day delivery, 20 pages, unlimited revisions, e-commerce functionality for up to 20 products, payment processing, and more.</p>
                 <p>Price: $2,500</p>
-                <p>Expedited Delivery (within 10 days): Additional $650</p>
             </div>
         </div>
     </section>
 
-    <!-- App Development Section -->
     <section id="app-development" class="services">
         <div class="container">
             <h2>App Development</h2>
-            <!-- App Development Packages -->
-            <div class="service-item" onclick="redirectToAppDevelopment()">
+            <div class="service-item">
                 <h3>Essential Package</h3>
-                <p>Get started with your mobile app development journey with our Basic Package, ideal for startups and small businesses.</p>
-                <p>Android or iOS platform</p>
-                <p>2-3 core features</p>
-                <p>Simple UI/UX design</p>
-                <p>Testing and bug fixes</p>
-                <p>Delivery within 4-6 weeks</p>
-                <p><strong>Price:</strong> $3000</p>
+                <p>Includes Android or iOS platform, 2-3 core features, simple UI/UX design, testing, and bug fixes. Delivery within 4-6 weeks.</p>
+                <p>Price: $3,000</p>
             </div>
-            <div class="service-item" onclick="redirectToAppDevelopment()">
+            <div class="service-item">
                 <h3>Advanced Package</h3>
-                <p>Elevate your app with our Advanced Package, suitable for businesses looking to integrate complex functionalities and scalable solutions.</p>
-                <p>Android and iOS platforms</p>
-                <p>5-7 core features</p>
-                <p>Custom UI/UX design</p>
-                <p>API integration</p>
-                <p>Testing, deployment, and maintenance</p>
-                <p>Delivery within 8-12 weeks</p>
-                <p><strong>Price:</strong> $6000</p>
+                <p>Includes Android and iOS platforms, 5-7 core features, custom UI/UX design, API integration, testing, deployment, and maintenance. Delivery within 8-12 weeks.</p>
+                <p>Price: $6,000</p>
             </div>
         </div>
     </section>
     
-    <!-- Stripe Payment Button -->
+    <!-- Stripe Payment Buttons -->
     <div class="container">
-        <a href="https://buy.stripe.com/5kA6qG0tWfL6bxC6ou" target="_blank" rel="noopener noreferrer" class="signup-button">            
-            Order Your Website
-        </a>
-        <a href="https://buy.stripe.com/bIY6qGfoQeH2aty6ox" target="_blank" rel="noopener noreferrer" class="signup-button">
-            Order your App
-        </a>
+        <a href="https://buy.stripe.com/5kA6qG0tWfL6bxC6ou" class="signup-button" target="_blank" rel="noopener noreferrer">Order Your Website</a>
+        <a href="https://buy.stripe.com/bIY6qGfoQeH2aty6ox" class="signup-button" target="_blank" rel="noopener noreferrer">Order your App</a>
+        <p style="text-align: center; font-size: 18px; margin-top: 20px;">Make sure to adjust your package at checkout</p>
     </div>
-    <p>Make sure to adjust your package at checkout</p>
 
     <script>
         function toggleNav() {
             var navigation = document.querySelector('.navigation');
-            navigation.classList.toggle('active'); // Toggle the active class on click
+            navigation.classList.toggle('active');
         }
 
-        function redirectToAppDevelopment() {
-            window.location.href = "#app-development"; // Redirect to the App Development section
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const buttonText = document.querySelector('.dark-mode-toggle');
+            buttonText.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
         }
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
