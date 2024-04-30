@@ -1,187 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Career Page</title>
-<style>
-    body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    h1 {
-        text-align: center;
-        font-size: 36px;
-    }
-    .section {
-        margin-top: 50px;
-    }
-    .section-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    .section-content {
-        line-height: 2;
-    }
-    .button {
-        display: inline-block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        text-align: center;
-        background-color: #1E90FF;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-    .button:hover {
-        background-color: #0066CC;
-    }
-    
-    /* Navigation styles */
-    .header {
-        background-color: black;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-    }
-    .container-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .navigation-toggle {
-        display: none;
-    }
-    label[for="nav-toggle"] {
-        cursor: pointer;
-        font-size: 24px;
-    }
-    .logo {
-        margin: 0 auto;
-    }
-    .navigation {
-        display: none;
-        list-style-type: none;
-        padding: 0;
-    }
-    .navigation li {
-        display: inline;
-        margin-left: 20px;
-    }
-    .navigation li a {
-        color: white;
-        text-decoration: none;
-    }
-    .navigation li a:hover {
-        color: #1E90FF;
-    }
-    @media screen and (max-width: 768px) {
-        .navigation-toggle {
-            display: block;
-        }
-        .navigation {
-            display: block;
-        }
-        .navigation li {
-            display: block;
-            margin: 10px 0;
-        }
-        .logo {
-            text-align: center;
-        }
-    }
-    .start-learning {
-        text-align: center;
-        margin-top: 50px;
-    }
-    .textbook-box {
-        border: 2px solid #1E90FF;
-        padding: 20px;
-        margin-top: 20px;
-    }
-    .youtube-link {
-        color: white;
-        text-decoration: none;
-    }
-    .careers-link {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Page</title>
+    <link rel="stylesheet" href="Careerspage.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>
-
-<!-- Navigation -->
-<header class="header">
-    <div class="container-nav">
+    <!-- Navigation -->
+    <header class="header">
+        <img src="https://github.com/ThomasLArnold/Terranovaai.net/blob/main/logo.png?raw=true" alt="Terra Logo" class="logo">
         <input type="checkbox" class="navigation-toggle" id="nav-toggle">
         <label for="nav-toggle" onclick="toggleNav()">&#9776;</label> <!-- Hamburger menu icon -->
-        <h1 class="logo">Terra</h1>
+        <h1 class="logo-text">Terra</h1>
         <nav class="navigation">
-            <ul>
+            
                 <li><a href="index.html">Home</a></li>
                 <li><a href="WebandApp.html">Web & App Development</a></li>
-                <li><a href="Terra'sAiServices.html">Web & App Development</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="Terra'sAiServices.html">AI Services</a></li>
                 <li><a href="./about_owner.html">About Owner</a></li>
                 <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
                 <li><a href="./privacypolicy.html">Privacy Policy</a></li>
-
-
-            </ul>
+            
         </nav>
-    </div>
-</header>
+    </header>
 
-<div class="container">
-    <h1>Career Page</h1>
+    <div class="container">
+        <h1>Career Page</h1>
 
-    <div class="section">
-        <div class="section-title">Web and App Development</div>
-        <div class="section-content">
-            <p>For Developers, you will choose from a list of project requirements for each project. You can take up to 3 projects at once. Once you've completed the projects, you can submit them through this Google Form.</p>
-            <a href="https://forms.gle/WRnZiHHs1cxdwPzG7" class="button">View Open Positions</a>
+        <div class="section">
+            <div class="section-title">Web and App Development</div>
+            <div class="section-content">
+                <p>For Developers, you will choose from a list of project requirements for each project. You can take up to 3 projects at once. Once you've completed the projects, you can submit them through this Google Form.</p>
+                <a href="https://forms.gle/WRnZiHHs1cxdwPzG7" class="button">View Open Positions</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Sales Team Member</div>
+            <div class="section-content">
+                <p>At Terranovaai, we value our sales team members!! Have a flexible work schedule and live anywhere in the U.S. This position requires a Laptop and a phone. You will be speaking with business owners over the phone or in person in your local area. You will close sales and will be paid out the same day!!! Every time you make a website or app sale, you give Terranovaai's developers more projects to complete and drive revenue for the Company, securing capital for our mission to revolutionize businesses and advance technology.</p>
+            </div>
+        </div>
+
+        <div class="start-learning">
+            <h2>Start Learning</h2>
+            <p>To start watching my playlists <a href="https://www.youtube.com/@terranovaai/playlists" class="youtube-link">Click Here</a>. You can also use the textbook for reference; it is free at no cost.</p>
+            <div class="textbook-box">
+                <h3>HTML Textbook</h3>
+                <button class="button">Download</button>
+            </div>
+            <div class="textbook-box">
+                <h3>Web Design Textbook</h3>
+                <button class="button">Download</button>
+            </div>
         </div>
     </div>
 
-    <div class="section">
-        <div class="section-title">Sales Team Member</div>
-        <div class="section-content">
-            <p>At Terranovaai, we value our sales team members!! Have a flexible work schedule and live anywhere in the U.S. This position requires a Laptop and a phone. You will be speaking with business owners over the phone or in person in your local area. You will close sales and will be paid out the same day!!! Every time you make a website or app sale, you give Terranovaai's developers more projects to complete and drive revenue for the Company, securing capital for our mission to revolutionize businesses and advance technology.</p>
-        </div>
-    </div>
-
-    <div class="start-learning">
-        <h2>Start Learning</h2>
-        <p>Click here to start watching my playlists <a href="https://www.youtube.com/@terranovaai/playlists" class="youtube-link">https://www.youtube.com/@terranovaai/playlists</a>. You can also use the textbook for reference; it is free at no cost.</p>
-        <div class="textbook-box">
-            <h3>HTML Textbook</h3>
-            <button class="button">Download</button>
-        </div>
-        <div class="textbook-box">
-            <h3>Web Design Textbook</h3>
-            <button class="button">Download</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    function toggleNav() {
-        var nav = document.querySelector('.navigation');
-        nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
-    }
-</script>
-
+    <script>
+        function toggleNav() {
+            var nav = document.querySelector('.navigation');
+            nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
