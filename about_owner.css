@@ -1,0 +1,140 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* Text color */
+    transition: background-color 0.3s ease;
+}
+.container {
+    width: 80%;
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center align content */
+}
+
+/* Cinematic Text Styles */
+h2.neon-text {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    color: #ff00ff; /* Neon pink color */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+}
+.about-owner p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify; /* Justify text */
+}
+.about-owner a {
+    color: #ff00ff; /* Neon pink color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.about-owner a:hover {
+    color: #ff99ff; /* Lighter pink on hover */
+}
+
+/* Navigation Styles */
+.header {
+    background-color: #1a1a1a; /* Dark background for navigation */
+    padding: 20px 0; /* Add padding to the top and bottom */
+    position: relative; /* Relative positioning for absolute positioning */
+}
+
+.navigation ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+    text-align: center; /* Center align navigation links */
+}
+
+.navigation ul li {
+    display: block; /* Display items vertically */
+    margin-bottom: 10px; /* Add space between items */
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #ff1dce;
+}
+
+/* Hamburger Icon */
+.navigation-toggle {
+    display: none; /* Hide by default */
+}
+
+/* Navigation Dropdown */
+.navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(18, 174, 192, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.navigation.active {
+    display: block;
+}
+
+/* Logo Styles */
+.logo {
+    width: 100px; /* Adjust the size as needed */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+/* YouTube Video Player Styles */
+.youtube-video {
+    margin-top: 50px;
+    text-align: center;
+}
+.youtube-video iframe {
+    width: 80%;
+    height: 400px;
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 768px) {
+    .navigation-toggle {
+        display: block; /* Show hamburger icon on mobile */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .navigation ul {
+        display: none; /* Hide navigation links by default on mobile */
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(18, 174, 192, 0.9);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .navigation.active ul {
+        display: block; /* Show navigation links when hamburger icon is clicked */
+    }
+
+    .navigation ul li {
+        display: block; /* Display items vertically */
+        margin-bottom: 10px; /* Add space between items */
+    }
+}
