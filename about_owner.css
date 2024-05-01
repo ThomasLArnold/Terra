@@ -92,11 +92,12 @@ h2.neon-text {
 
 /* Logo Styles */
 .logo {
-    width: 100px; /* Adjust the size as needed */
+    width: 80px; /* Adjust the size as needed */
     position: absolute;
     top: 20px;
     left: 20px;
 }
+
 /* YouTube Video Player Styles */
 .youtube-video {
     margin-top: 50px;
