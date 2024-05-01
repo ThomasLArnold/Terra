@@ -4,118 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Owner | Terra</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000; /* Black background */
-            color: #ffffff; /* Text color */
-            transition: background-color 0.3s ease;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto; /* Center the container */
-        }
-
-        /* Cinematic Text Styles */
-        h2.neon-text {
-            font-size: 48px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            color: #ff00ff; /* Neon pink color */
-            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
-        }
-        .about-owner p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            text-align: justify; /* Justify text */
-        }
-        .about-owner a {
-            color: #ff00ff; /* Neon pink color */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .about-owner a:hover {
-            color: #ff99ff; /* Lighter pink on hover */
-        }
-
-        /* Navigation Styles */
-        .header {
-            background-color: #1a1a1a; /* Dark background for navigation */
-            padding: 20px 0; /* Add padding to the top and bottom */
-        }
-
-        .navigation ul {
-            list-style: none; /* Remove default list styles */
-            padding: 0;
-            text-align: center; /* Center align navigation links */
-        }
-
-        .navigation ul li {
-            display: inline-block; /* Display items horizontally */
-            margin-right: 20px; /* Add space between items */
-        }
-
-        .navigation ul li a {
-            text-decoration: none; /* Remove underline from links */
-            color: #ffffff; /* Link text color */
-            font-size: 18px; /* Font size */
-            transition: color 0.3s ease; /* Smooth transition for color change */
-        }
-
-        .navigation ul li a:hover {
-            color: #ff00ff; /* Neon pink color on hover */
-        }
-
-        /* Instagram Preview Popup */
-        #instagram-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            z-index: 9999;
-        }
-        #instagram-popup img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 80%;
-            max-height: 80%;
-        }
-
-        /* YouTube Video Player Styles */
-        .youtube-video {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .youtube-video iframe {
-            width: 80%;
-            height: 400px;
-        }
-    </style>
+    <link rel="stylesheet" href="about_owner.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>
     <!-- Navigation -->
     <header class="header">
         <div class="container">
-            <h1 class="logo neon-text">Terra</h1>
+            <img src="https://github.com/ThomasLArnold/Terranovaai.net/blob/main/logo.png?raw=true" alt="Terra Logo" class="logo">
+            <input type="checkbox" class="navigation-toggle" id="nav-toggle">
+            <label for="nav-toggle">&#9776;</label>
             <nav class="navigation">
                 <ul>
-                    <li><a href="terra_ai.html">Terra's AI</a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="video_generator.html">Video Generator</a></li>
-                    <li><a href="image_generator.html">Image Generator</a></li>
-                    <li><a href="about_owner.html">About Owner</a></li>
-                    <li><a href="instagram.html">Instagram</a></li> <!-- Updated link to Terra's Instagram -->
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="WebandApp.html">Web & App Development</a></li>
+                    <li><a href="Terra'sAiServices.html">Terra's AI Services</a></li>
+                    <li><a href="Careerspage.html">Careers Page</a></li>
+                    <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
+                    <li><a href="./privacypolicy.html">Privacy Policy</a></li>
                 </ul>
             </nav>
         </div>
@@ -132,7 +37,7 @@
 
     <!-- YouTube Video Player -->
     <div class="youtube-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/6iH9Nl_hYdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ezme6Tb6qks?si=Wc8dcs0NnFcYqVy6" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <!-- Instagram Preview Popup -->
@@ -141,15 +46,20 @@
     </div>
 
     <script>
-        // Function to open Instagram preview popup
-        function openInstagramPreview() {
-            document.getElementById("instagram-popup").style.display = "block";
-        }
-        // Function to close Instagram preview popup
-        function closeInstagramPreview() {
-            document.getElementById("instagram-popup").style.display = "none";
-        }
+        // Function to open/close navigation menu
+        document.addEventListener('DOMContentLoaded', function () {
+            var navToggle = document.querySelector('.navigation-toggle');
+            var navigation = document.querySelector('.navigation');
+
+            navToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    navigation.classList.add('active');
+                } else {
+                    navigation.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                bt
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                bt
