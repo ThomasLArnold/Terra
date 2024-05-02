@@ -4,78 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Terra Nova AI</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
-    <style>
-        /* Global Styles */
-        body {
-            background-color: #111; /* Set background color to black */
-            color: #fff; /* Set text color to white */
-            font-family: Arial, sans-serif; /* Use a sans-serif font */
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center; /* Center align content */
-        }
-        .header {
-            background-color: #000; /* Set navigation background color to black */
-            padding: 20px 0; /* Add padding to the top and bottom */
-        }
-        .logo,
-        .navigation ul li a {
-            color: #fff; /* Set navigation text color to white */
-            text-decoration: none; /* Remove underline from links */
-        }
-        .navigation ul {
-            list-style: none; /* Remove default list styles */
-            padding: 0;
-            text-align: center; /* Center align navigation links */
-        }
-        .navigation ul li {
-            display: inline-block; /* Display items horizontally */
-            margin: 0 10px; /* Add space between items */
-        }
-        .privacy-policy {
-            background-color: #222; /* Set privacy policy background color to dark grey */
-            color: #fff; /* Set privacy policy text color to white */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            text-align: left; /* Align text to the left */
-            margin-top: 20px; /* Add space between navigation and privacy policy */
-        }
-        .privacy-policy h2 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .privacy-policy p {
-            margin-bottom: 10px;
-        }
-        .privacy-policy a {
-            color: #ff1dce;
-        }
-    </style>
+    <link rel="stylesheet" href="privacypolicy.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>
     <!-- Navigation -->
     <header class="header">
-        <div class="container">
-            <h1 class="logo">Terra</h1>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Terra'sAiServices.html">Terra's Ai Services</a></li> 
-                    <li><a href="WebandApp.html">Web and App</a></li> 
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                     <li><a href="about_owner.html">About Owner</a></li>
-                    <li><a href="instagram.html">Instagram</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1 class="logo-text">Terra</h1>
+        <input type="checkbox" class="navigation-toggle" id="nav-toggle">
+        <label for="nav-toggle" onclick="toggleNav()">&#9776;</label> <!-- Hamburger menu icon -->
+        <nav class="navigation">
+            
+                <li><a href="index.html">Home</a></li>
+                <li><a href="WebandApp.html">Web & App Development</a></li>
+                <li><a href="Terra'sAiServices.html">AI Services</a></li>
+                <li><a href="about_owner.html">About Owner</a></li>
+                <li><a href="https://www.instagram.com/terranovaai/">Instagram</a></li>
+                <li><a href="Careerspage.html">Careers</a></li>
+            
+        </nav>
     </header>
 
     <div class="container">
@@ -100,5 +46,18 @@
             <p>Last Updated: March 25, 2024</p>
         </div>
     </div>
+    
+    <script>
+        function toggleNav() {
+            var navToggle = document.querySelector('.navigation-toggle');
+            var navigation = document.querySelector('.navigation');
+
+            if (navToggle.checked) {
+                navigation.classList.add('active');
+            } else {
+                navigation.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
