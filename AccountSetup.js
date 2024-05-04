@@ -14,7 +14,7 @@ function handleFormSubmit(event) {
     })
     .then(data => {
         if (data.status === 'success') {
-            window.location.href = 'https://terranovaai.net/login.html';
+            window.location.href = 'https://terranovaai.net/AccountSetup.html';
         } else {
             alert('Failed to create account. Please try again. Message: ' + data.message);
         }
